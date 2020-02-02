@@ -76,9 +76,7 @@ class ProductController extends Controller
         $product->update($request->all());
 
         return redirect()->route('products.edit', $product->id)
-        ->with('info','Producto Actualizado');
-
-        
+        ->with('info','Producto Actualizado');  
     }
 
     /**
