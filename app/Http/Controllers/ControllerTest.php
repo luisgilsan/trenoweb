@@ -19,8 +19,6 @@ class ControllerTest extends Controller
         $role->name = 'Rol Administrador';
         $role->airline = 'Avianca';
         $role->description = 'SN';
-        $
-        user_id
         $role->save();
 
         role::create([
@@ -47,7 +45,7 @@ class ControllerTest extends Controller
     public function edit($id)
     {
         $role = role::findOrFail($id);
-        $role->name =  
+        $role->name ='jaja';  
         return $role;
     }
 

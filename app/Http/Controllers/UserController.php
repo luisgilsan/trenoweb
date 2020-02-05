@@ -76,6 +76,8 @@ class UserController extends Controller
     {
         $user->update($request->all());
 
+        $user->roles()->sync($request->get('roles'));
+
         return redirect()->route('users.edit', $user->id)
         ->with('info','Usuario Actualizado');  
     }

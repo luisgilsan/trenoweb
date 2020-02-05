@@ -6,9 +6,9 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">
-                    Productos
-                    @can('products.create', Model::class)
-                    <a href="{{ route('products.create') }}" class="btn btn-sm btn-primary float-right">
+                    Roles
+                    @can('roles.create', Model::class)
+                    <a href="{{ route('roles.create') }}" class="btn btn-sm btn-primary float-right">
                         Crear
                     </a>    
                     @endcan
@@ -24,21 +24,21 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($products as $product)
+                            @foreach ($roles as $role)
                                 <tr>
-                                    <td>{{ $product->id }}</td>
-                                    <td>{{ $product->name }}</td>
+                                    <td>{{ $role->id }}</td>
+                                    <td>{{ $role->name }}</td>
                                     <td>
-                                        @can('products.show')
-                                            <a  href="{{ route('products.show', $product->id) }}" 
+                                        @can('roles.show')
+                                            <a  href="{{ route('roles.show', $role->id) }}" 
                                                 class="btn btn-sm btn-success">
                                                 Ver
                                             </a>
                                         @endcan
                                     </td>
                                     <td>
-                                        @can('products.edit')
-                                            <a  href="{{ route('products.edit', $product->id) }}" 
+                                        @can('roles.edit')
+                                            <a  href="{{ route('roles.edit', $role->id) }}" 
                                                 class="btn btn-sm btn-success">
                                                 Editar
                                             </a>
@@ -46,21 +46,21 @@
                                     </td>
 
                                     <td>
-                                        {{-- @can('products.destroy') --}}
+                                        @can('roles.destroy')
                                             {!! Form::open (
-                                                ['route' => ['products.destroy', $product->id],
+                                                ['route' => ['roles.destroy', $role->id],
                                                 'method' => 'DELETE'])!!}
                                                 <button class="btn btn-sm btn-danger">
                                                     Eliminar
                                                 </button>
                                             {!! Form::close() !!}    
-                                        {{-- @endcan --}}
+                                        @endcan
                                     </td>
                                 </tr>
                             @endforeach
                         </tbody> 
                     </table>
-                    {{ $products->render() }}
+                    {{ $roles->render() }}
                 </div>
             </div>
         </div>
