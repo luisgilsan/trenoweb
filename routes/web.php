@@ -12,8 +12,13 @@
 */
 
 Route::get('/', function () {
+    return view('welcomedos');
+});
+
+Route::get('/jaja', function () {
     return view('welcome');
 });
+
 
 Route::resource('panel', 'ControllerTest');
 
