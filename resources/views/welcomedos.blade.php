@@ -30,14 +30,9 @@
 </style>
 
 @section('content')
-
-
-    
-
-
     <div class="content">
         <div class="title m-b-md">
-            Laravel
+            Bienvenido a Treno!
         </div>
 
         <div class="links">
@@ -51,5 +46,4 @@
             <a href="https://github.com/laravel/laravel">GitHub</a>
         </div>
     </div>
-
 @endsection

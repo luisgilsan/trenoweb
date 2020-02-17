@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
+            <div class="card card-treno">
                 <div class="card-header">
                     Usuarios
                     @can('users.create', Model::class)
