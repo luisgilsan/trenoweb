@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\User;
+use App\user_measurement;
 use Illuminate\Http\Request;
-use Caffeinated\Shinobi\Models\Role;
 
-class UserController extends Controller
+class UserMeasurementController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +14,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::paginate();
-
-        return view('users.index', compact('users'));
+        //
     }
 
     /**
@@ -44,55 +41,45 @@ class UserController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\user_measurement  $user_measurement
      * @return \Illuminate\Http\Response
      */
-    public function show(user $user)
+    public function show(user_measurement $user_measurement)
     {
-        dd($user->roles);
-        return view('users.show',compact('user'));
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\user_measurement  $user_measurement
      * @return \Illuminate\Http\Response
      */
-    public function edit(user $user)
+    public function edit(user_measurement $user_measurement)
     {
-        $roles = Role::get();
-
-        return view('users.edit',compact('user','roles'));
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\user_measurement  $user_measurement
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, user $user)
+    public function update(Request $request, user_measurement $user_measurement)
     {
-        $user->update($request->all());
-
-        $user->roles()->sync($request->get('roles'));
-
-        return redirect()->route('users.edit', $user->id)
-        ->with('info','Usuario Actualizado');  
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\user_measurement  $user_measurement
      * @return \Illuminate\Http\Response
      */
-    public function destroy(user $user)
+    public function destroy(user_measurement $user_measurement)
     {
-        $user->delete();
-
-        return back()->with('info','Usuario Eliminado');
+        //
     }
 }

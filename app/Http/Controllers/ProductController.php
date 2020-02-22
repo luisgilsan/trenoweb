@@ -60,6 +60,7 @@ class ProductController extends Controller
      */
     public function show(product $product)
     {
+        dd($product);
         return view('products.show',compact('product'));
     }
 

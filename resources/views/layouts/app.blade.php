@@ -108,6 +108,11 @@
                                 <a class="nav-link" href="{{ route('users.index') }}" >Usuarios</a>
                             </li>
                         @endcan
+                        @can('roles.index')
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('users.index') }}" >Valoraciones</a>
+                            </li>
+                        @endcan
 
                     </ul>
 
