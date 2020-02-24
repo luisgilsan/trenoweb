@@ -3,12 +3,12 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-10">
             <div class="card card-treno" >
                 <div class="card-header">
                     Valoraciones
-                    @can('products.create', Model::class)
-                    <a href="{{ route('products.create') }}" class="btn btn-sm btn-primary float-right">
+                    @can('assessment.create', Model::class)
+                    <a href="{{ route('assessments.create') }}" class="btn btn-sm btn-primary float-right">
                         Agregar
                     </a>    
                     @endcan
@@ -18,27 +18,31 @@
                     <table class="table table-striped table-hover">
                         <thead>
                             <tr>
-                                <th width="5%">ID</th>
-                                <th>Nombre</th>
+                                {{-- <th width="5%">ID</th> --}}
+                                <th>Asesor</th>
+                                <th>Usuario</th>
+                                <th>Fecha del reporte</th>
                                 <th colspan="3">&nbsp;</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($products as $product)
+                            @foreach ($assessments as $assessment)
                                 <tr>
-                                    <td>{{ $product->id }}</td>
-                                    <td>{{ $product->name }}</td>
+                                    {{-- <td>{{ $assessment->id }}</td> --}}
+                                    <td>{{ $assessment->UserAssessor->name }}</td>
+                                    <td>{{ $assessment->UserCustomer->name }}</td>
+                                    <td>{{ $assessment->measurement_date }}</td>
                                     <td>
-                                        @can('products.show')
-                                            <a  href="{{ route('products.show', $product->id) }}" 
+                                        @can('assessment.show')
+                                            <a  href="{{ route('assessments.show', $assessment->id) }}" 
                                                 class="btn btn-sm btn-success">
                                                 Ver
                                             </a>
                                         @endcan
                                     </td>
                                     <td>
-                                        @can('products.edit')
-                                            <a  href="{{ route('products.edit', $product->id) }}" 
+                                        @can('assessment.edit')
+                                            <a  href="{{ route('assessments.edit', $assessment->id) }}" 
                                                 class="btn btn-sm btn-success">
                                                 Editar
                                             </a>
@@ -46,21 +50,21 @@
                                     </td>
 
                                     <td>
-                                        {{-- @can('products.destroy') --}}
+                                        @can('assessment.destroy')
                                             {!! Form::open (
-                                                ['route' => ['products.destroy', $product->id],
+                                                ['route' => ['assessments.destroy', $assessment->id],
                                                 'method' => 'DELETE'])!!}
                                                 <button class="btn btn-sm btn-danger">
                                                     Eliminar
                                                 </button>
                                             {!! Form::close() !!}    
-                                        {{-- @endcan --}}
+                                        @endcan
                                     </td>
                                 </tr>
                             @endforeach
                         </tbody> 
                     </table>
-                    {{ $products->render() }}
+                    {{ $assessments->render() }}
                 </div>
 
             </div>

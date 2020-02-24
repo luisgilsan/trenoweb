@@ -110,7 +110,7 @@
                         @endcan
                         @can('roles.index')
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('users.index') }}" >Valoraciones</a>
+                                <a class="nav-link" href="{{ route('assessments.index') }}" >Valoraciones</a>
                             </li>
                         @endcan
 

@@ -22,7 +22,7 @@ class CreateAssessmentsTable extends Migration
             $table->unsignedBigInteger('partner_user_id')->index();
             $table->foreign('partner_user_id')->references('id')->on('users')->onDelete('cascade');
 
-            $table->dateTime('measurement date');
+            $table->dateTime('measurement_date');
 
             $table->bigIncrements('id');
             $table->timestamps();

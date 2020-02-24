@@ -74,4 +74,7 @@ Route::middleware(['auth'])->group(function() {
 
     Route::get('users/{user}/edit','UserController@edit')->name('users.edit')
                     ->middleware('can:users.edit');
+    
+    // Products
+    Route::resource('assessments', 'AssessmentController');
 });
