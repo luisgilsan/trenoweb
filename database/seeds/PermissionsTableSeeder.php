@@ -121,6 +121,32 @@ class PermissionsTableSeeder extends Seeder
             'description'   => 'Eliminar valoracion del sistema',
         ]);
 
+        // Units Permission's
+        Permission::create([
+            'name'          => 'Ver unidades',
+            'slug'          => 'unit.index',
+            'description'   => 'Lista y navega las unidades del sistema',
+        ]);
+        Permission::create([
+            'name'          => 'Ver detalle de unidades',
+            'slug'          => 'unit.show',
+            'description'   => 'Ver detalle de cada unidad registrada',
+        ]);
+        Permission::create([
+            'name'          => 'Crear unidades',
+            'slug'          => 'unit.create',
+            'description'   => 'Registar unidades',
+        ]);
+        Permission::create([
+            'name'          => 'Editar unidades',
+            'slug'          => 'unit.edit',
+            'description'   => 'Editar cualquier unidad del sistema',
+        ]);
+        Permission::create([
+            'name'          => 'Eliminar unidades',
+            'slug'          => 'unitç.destroy',
+            'description'   => 'Eliminar unidades del sistema',
+        ]);
 
 
     }

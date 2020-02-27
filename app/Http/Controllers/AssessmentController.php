@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\User;
 use App\Assessment;
+use App\unit_measurement;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use Webmozart\Assert\Assert;
@@ -40,18 +41,18 @@ class AssessmentController extends Controller
     {
 
 
-        $users = User::where('email_verified_at','!=',null)->get();
 
-
-        $vect = [];
+        $units = unit_measurement::where('name','!=',null)->get();
         
+        $vect = [];
+        $users = User::where('email_verified_at','!=',null)->get();
         foreach ($users as $user)
         { 
             $vect += [ $user->id => $user->name ];
         }
         
         // $vect = [0 => 'Jose Angel'];
-        return view('assessments.create',compact('vect'));
+        return view('assessments.create',compact('vect','units'));
     
     }
     /**
@@ -63,7 +64,9 @@ class AssessmentController extends Controller
     public function store(Request $request)
     {
 
+
         $obj_to_save = $request->all();
+        dd($obj_to_save);
         $current_date_time = Carbon::now()->toDateTimeString();
 
         $obj_to_save += [ 'measurement_date' => $current_date_time ];

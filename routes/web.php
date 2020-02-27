@@ -77,4 +77,7 @@ Route::middleware(['auth'])->group(function() {
     
     // Products
     Route::resource('assessments', 'AssessmentController');
+
+    // Products
+    Route::resource('units', 'UnitMeasurementController');
 });

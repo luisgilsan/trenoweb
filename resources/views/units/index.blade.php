@@ -7,11 +7,11 @@
             <div class="card card-treno" >
                 <div class="card-header">
                     Valoraciones
-                    @can('assessment.create', Model::class)
-                    <a href="{{ route('assessments.create') }}" class="btn btn-sm btn-primary float-right">
+                    @can('unit.create', Model::class)
+                    <a href="{{ route('units.create') }}" class="btn btn-sm btn-primary float-right">
                         Agregar
                     </a> 
-                    <a href="{{ route('units.index') }}" class="btn btn-sm btn-success float-right">
+                    <a href="{{ route('assessments.create') }}" class="btn btn-sm btn-success float-right">
                         Ajustar unidades
                     </a>     
                     @endcan
@@ -22,30 +22,29 @@
                         <thead>
                             <tr>
                                 {{-- <th width="5%">ID</th> --}}
-                                <th>Asesor</th>
-                                <th>Usuario</th>
-                                <th>Fecha del reporte</th>
+                                <th>Nombre</th>
+                                <th>Prefijo</th>
+                                <th>Activo</th>
                                 <th colspan="3">&nbsp;</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($assessments as $assessment)
+                            @foreach ($units as $unit)
                                 <tr>
-                                    {{-- <td>{{ $assessment->id }}</td> --}}
-                                    <td>{{ $assessment->UserAssessor->name }}</td>
-                                    <td>{{ $assessment->UserCustomer->name }}</td>
-                                    <td>{{ $assessment->measurement_date }}</td>
+                                    <td>{{ $unit->name }}</td>
+                                    <td>{{ $unit->prefix }}</td>
+                                    <td>{{ $unit->active }}</td>
                                     <td>
-                                        @can('assessment.show')
-                                            <a  href="{{ route('assessments.show', $assessment->id) }}" 
+                                        @can('unit.show')
+                                            <a  href="{{ route('units.show', $unit->id) }}" 
                                                 class="btn btn-sm btn-success">
                                                 Ver
                                             </a>
                                         @endcan
                                     </td>
                                     <td>
-                                        @can('assessment.edit')
-                                            <a  href="{{ route('assessments.edit', $assessment->id) }}" 
+                                        @can('unit.edit')
+                                            <a  href="{{ route('units.edit', $unit->id) }}" 
                                                 class="btn btn-sm btn-success">
                                                 Editar
                                             </a>
@@ -53,9 +52,9 @@
                                     </td>
 
                                     <td>
-                                        @can('assessment.destroy')
+                                        @can('unit.destroy')
                                             {!! Form::open (
-                                                ['route' => ['assessments.destroy', $assessment->id],
+                                                ['route' => ['units.destroy', $unit->id],
                                                 'method' => 'DELETE'])!!}
                                                 <button class="btn btn-sm btn-danger">
                                                     Eliminar
@@ -67,7 +66,7 @@
                             @endforeach
                         </tbody> 
                     </table>
-                    {{ $assessments->render() }}
+                    {{ $units->render() }}
                 </div>
 
             </div>

@@ -47,6 +47,10 @@
             border-width: 3px;
         }
 
+        .primary-treno{
+            color:#00b0ff;
+        }
+
         .font-bold-treno{
             font-weight: bold;
         }
