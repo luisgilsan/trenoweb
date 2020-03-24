@@ -29,7 +29,7 @@ class AssessmentController extends Controller
     {
         $assessments = Assessment::paginate();
 
-        return view('assessments.index', compact('assessments'));
+        return view('assessmentsno.index', compact('assessments'));
     }
 
     /**
@@ -39,20 +39,15 @@ class AssessmentController extends Controller
      */
     public function create()
     {
-
-
-
-        $units = unit_measurement::where('name','!=',null)->get();
-        
+        $units = unit_measurement::where('name','!=',null)->get();   
         $vect = [];
         $users = User::where('email_verified_at','!=',null)->get();
         foreach ($users as $user)
         { 
             $vect += [ $user->id => $user->name ];
         }
-        
         // $vect = [0 => 'Jose Angel'];
-        return view('assessments.create',compact('vect','units'));
+        return view('assessmentsno.create',compact('vect','units','users'));
     
     }
     /**
@@ -63,15 +58,10 @@ class AssessmentController extends Controller
      */
     public function store(Request $request)
     {
-
-
         $obj_to_save = $request->all();
-        dd($obj_to_save);
-        $current_date_time = Carbon::now()->toDateTimeString();
 
-        $obj_to_save += [ 'measurement_date' => $current_date_time ];
         $assessment = Assessment::create($obj_to_save);
-        echo "guardado en bd";
+        echo "guardado en bd ID->".$assessment->id;
         echo "no guardado";
     }
 

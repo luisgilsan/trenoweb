@@ -75,9 +75,11 @@ Route::middleware(['auth'])->group(function() {
     Route::get('users/{user}/edit','UserController@edit')->name('users.edit')
                     ->middleware('can:users.edit');
     
-    // Products
+    // Valoraciones
     Route::resource('assessments', 'AssessmentController');
 
-    // Products
+    // Unidades de medida
     Route::resource('units', 'UnitMeasurementController');
+
+    
 });
