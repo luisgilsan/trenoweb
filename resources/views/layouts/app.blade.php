@@ -9,16 +9,16 @@
 
     <title>{{ config('app.name', 'Treno') }}</title>
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
+
     <!-- Styles -->
+    @yield('stylesPlugin')
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
+    
     <style>
         .navbar-treno {
             color: #00b0ff;
@@ -88,6 +88,14 @@
 
     </style>
 
+    
+
+    <!-- Scripts -->
+    @yield('scritpsPage')
+    {{-- <script src="{{ asset('js/app.js') }}" defer></script> --}}
+
+
+    
 </head>
 <body class="bg-treno">
     <div id="app">
@@ -105,7 +113,12 @@
                     <ul class="navbar-nav mr-auto">
                         @can('products.index')
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('products.index') }}" >Productos</a>
+                                <a class="nav-link" href="{{ route('products.index') }}">Productos</a>
+                            </li>
+                        @endcan
+                        @can('products.index')
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('products.index') }}">Catálogo</a>
                             </li>
                         @endcan
                         @can('roles.index')
@@ -184,8 +197,9 @@
         <main class="py-4">
             @yield('content')
         </main>
-    </div>
+    </div>  
 
+    @yield('extraScritps')
 
     <!-- Footer -->
     <footer class="page-footer font-small blue pt-4 footer-treno">

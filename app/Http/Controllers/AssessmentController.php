@@ -8,10 +8,11 @@ use App\unit_measurement;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use Webmozart\Assert\Assert;
+use Illuminate\Support\Facades\Storage;
+
 
 class AssessmentController extends Controller
 {
-
     public function __construct()
     {
         $this->middleware('can:assessment.create')->only(['create','store']);
@@ -39,16 +40,16 @@ class AssessmentController extends Controller
      */
     public function create()
     {
-        $units = unit_measurement::where('name','!=',null)->get();   
-        $vect = [];
-        $users = User::where('email_verified_at','!=',null)->get();
-        foreach ($users as $user)
+        $units = unit_measurement::where('active','=',True)->get();   
+        $users = User::where('email_verified_at','!=',False)->get();
+        $vect_units = [];
+        foreach ($units as $unit)
         { 
-            $vect += [ $user->id => $user->name ];
+        array_push ( $vect_units , array('name' => $unit->name, 'description' => $unit->description,
+        'prefix' => $unit->prefix) );
         }
-        // $vect = [0 => 'Jose Angel'];
-        return view('assessmentsno.create',compact('vect','units','users'));
-    
+
+        return view('assessmentsno.create',compact('vect_units','units','users'));
     }
     /**
      * Store a newly created resource in storage.
@@ -58,8 +59,11 @@ class AssessmentController extends Controller
      */
     public function store(Request $request)
     {
-        $obj_to_save = $request->all();
-
+        $picture = False;
+        if ($picture = Assessment::setPicture($request->picture)){
+            $request->request->add(['image'=> $picture]);
+        }
+        $obj_to_save = $request->except('picture','_token');
         $assessment = Assessment::create($obj_to_save);
         echo "guardado en bd ID->".$assessment->id;
         echo "no guardado";
@@ -73,7 +77,21 @@ class AssessmentController extends Controller
      */
     public function show(Assessment $assessment)
     {
-        //
+        // if ($assessment->image){
+        //     $name_image = $assessment->image;
+        // } else{
+        //     $name_image = 'none';
+        // }
+        $name_image = $assessment->image ? $assessment->image : 'none';
+        // $exists = Storage::disk('public')->exists("images/assessment/$name_image");
+        // $contents = Storage::disk('public')->get("images/assessment/$name_image");
+        // $url = Storage::url("images/assessment/$name_image");
+        // dd($url);
+        // if ($exists){
+            
+        // }
+        // dd($exists);
+        return view('assessmentsno.show',compact('assessment','name_image'));
     }
 
     /**

@@ -49,7 +49,6 @@ class UserController extends Controller
      */
     public function show(user $user)
     {
-        dd($user->roles);
         return view('users.show',compact('user'));
     }
 

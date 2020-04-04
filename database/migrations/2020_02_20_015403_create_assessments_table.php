@@ -15,7 +15,6 @@ class CreateAssessmentsTable extends Migration
     {
         Schema::create('assessments', function (Blueprint $table) {
 
-
             $table->unsignedBigInteger('user_id')->index();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 
@@ -23,6 +22,8 @@ class CreateAssessmentsTable extends Migration
             $table->foreign('partner_user_id')->references('id')->on('users')->onDelete('cascade');
 
             $table->dateTime('measurement_date');
+
+            $table->string('image', 50)->nullable();
 
             $table->bigIncrements('id');
             $table->timestamps();
