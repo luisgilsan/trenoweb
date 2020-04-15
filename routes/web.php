@@ -19,7 +19,11 @@ Route::get('/jaja', function () {
     return view('welcome');
 });
 
+Route::get('catalog/index', 'CatalogController@index')->name('catalog.index')
+                ->middleware('can:products.show');
 
+
+                
 Route::resource('panel', 'ControllerTest');
 
 Auth::routes();
@@ -30,56 +34,56 @@ Auth::routes(['verify' => true]);
 
 Route::middleware(['auth'])->group(function() {
     
-    // Roles
-    Route::post('roles/store', 'RoleController@store')->name('roles.store')
-                    ->middleware('can:roles.create');
+// Roles
+Route::post('roles/store', 'RoleController@store')->name('roles.store')
+                ->middleware('can:roles.create');
 
-    Route::get('roles','RoleController@index')->name('roles.index')
-                    ->middleware('can:roles.index');
+Route::get('roles','RoleController@index')->name('roles.index')
+                ->middleware('can:roles.index');
 
-    Route::get('roles/create','RoleController@create')->name('roles.create')
-                    ->middleware('can:roles.create');
+Route::get('roles/create','RoleController@create')->name('roles.create')
+                ->middleware('can:roles.create');
 
-    Route::put('roles/{role}','RoleController@update')->name('roles.update')
-                    ->middleware('can:roles.edit');
+Route::put('roles/{role}','RoleController@update')->name('roles.update')
+                ->middleware('can:roles.edit');
 
-    Route::get('roles/{role}','RoleController@show')->name('roles.show')
-                    ->middleware('can:roles.show');
+Route::get('roles/{role}','RoleController@show')->name('roles.show')
+                ->middleware('can:roles.show');
 
-    Route::delete('roles/{role}','RoleController@destroy')->name('roles.destroy')
-                    ->middleware('can:roles.destroy');
+Route::delete('roles/{role}','RoleController@destroy')->name('roles.destroy')
+                ->middleware('can:roles.destroy');
 
-    Route::get('roles/{role}/edit','RoleController@edit')->name('roles.edit')
-                    ->middleware('can:roles.edit');
+Route::get('roles/{role}/edit','RoleController@edit')->name('roles.edit')
+                ->middleware('can:roles.edit');
 
-    // Products
-    Route::resource('products', 'ProductController');
+// Products
+Route::resource('products', 'ProductController');
 
-    // Users
-    Route::get('users','UserController@index')->name('users.index')
-                    ->middleware('can:users.index');
+// Users
+Route::get('users','UserController@index')->name('users.index')
+                ->middleware('can:users.index');
 
-    Route::get('users/create','UserController@create')->name('users.create')
-    ->middleware('can:users.create');
+Route::get('users/create','UserController@create')->name('users.create')
+->middleware('can:users.create');
 
 
-    Route::put('users/{user}','UserController@update')->name('users.update')
-                    ->middleware('can:users.edit');
+Route::put('users/{user}','UserController@update')->name('users.update')
+                ->middleware('can:users.edit');
 
-    Route::get('users/{user}','UserController@show')->name('users.show')
-                    ->middleware('can:users.show');
+Route::get('users/{user}','UserController@show')->name('users.show')
+                ->middleware('can:users.show');
 
-    Route::delete('users/{user}','UserController@destroy')->name('users.destroy')
-                    ->middleware('can:users.destroy');
+Route::delete('users/{user}','UserController@destroy')->name('users.destroy')
+                ->middleware('can:users.destroy');
 
-    Route::get('users/{user}/edit','UserController@edit')->name('users.edit')
-                    ->middleware('can:users.edit');
-    
-    // Valoraciones
-    Route::resource('assessments', 'AssessmentController');
+Route::get('users/{user}/edit','UserController@edit')->name('users.edit')
+                ->middleware('can:users.edit');
 
-    // Unidades de medida
-    Route::resource('units', 'UnitMeasurementController');
+// Valoraciones
+Route::resource('assessments', 'AssessmentController');
+
+// Unidades de medida
+Route::resource('units', 'UnitMeasurementController');
 
     
 });

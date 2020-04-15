@@ -13,17 +13,16 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
-
     <!-- Styles -->
     @yield('stylesPlugin')
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
-    
     <style>
         .navbar-treno {
             color: #00b0ff;
             /* background-color: #00b0ff; */
             background-color: rgba(0, 176, 255, 1);
+            transition: background-color .5s;
         }
 
         .navbar-treno:hover {
@@ -52,7 +51,6 @@
             border-color:#00b0ff; 
             border-width: 3px;
         }
-
         .primary-treno{
             color:#00b0ff;
         }
@@ -83,18 +81,19 @@
             /* width: 40%;
             height: 10%; */
         }
-
-        
-
     </style>
 
-    
-
     <!-- Scripts -->
+    <script src="{{ asset('js/jquery-331.js') }}" ></script>
+    <script src="{{ asset('js/bootstrap413.js') }}" defer></script>
+    <script src="{{ asset('js/bootstrap-fileinput//js/plugins/piexif.js')}}" type="text/javascript"></script>  
+    <script src="{{ asset('js/bootstrap-fileinput/js/plugins/sortable.js')}}" type="text/javascript"></script> 
+    <script src="{{ asset('js/bootstrap-fileinput/js/fileinput.js')}}" type="text/javascript"></script> 
+    <script src="{{ asset('js/bootstrap-fileinput/js/locales/fr.js')}}" type="text/javascript"></script> 
+    <script src="{{ asset('js/bootstrap-fileinput/js/locales/es.js')}}" type="text/javascript"></script> 
+    <script src="{{ asset('js/bootstrap-fileinput/themes/fas/theme.js')}}" type="text/javascript"></script> 
+    <script src="{{ asset('js/bootstrap-fileinput/themes/explorer-fas/theme.js')}}" type="text/javascript"></script> 
     @yield('scritpsPage')
-    {{-- <script src="{{ asset('js/app.js') }}" defer></script> --}}
-
-
     
 </head>
 <body class="bg-treno">
@@ -118,7 +117,7 @@
                         @endcan
                         @can('products.index')
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('products.index') }}">Catálogo</a>
+                                <a class="nav-link" href="{{ route('catalog.index') }}">Catálogo</a>
                             </li>
                         @endcan
                         @can('roles.index')

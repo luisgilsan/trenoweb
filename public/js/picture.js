@@ -7,6 +7,7 @@ $(document).ready(function () {
         maxFileSize: 1000,
         showUpload: false,
         showClose: false,
+        showCancel: false,
         initialPreviewAsData: true,
         dropZoneEnabled: false,
         theme: "fas",

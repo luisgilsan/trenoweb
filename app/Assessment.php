@@ -39,7 +39,7 @@ class Assessment extends Model
             $image->resize(530,470, function($constraint){
                 $constraint->upsize(); 
             });
-            Storage::disk('public')->put("'images/assessment/'$imageName",$image->stream());
+            Storage::disk('public')->put("images/assessment/$imageName",$image->stream());
             return $imageName;
         } else {
             return False;

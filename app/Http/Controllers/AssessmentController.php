@@ -77,20 +77,7 @@ class AssessmentController extends Controller
      */
     public function show(Assessment $assessment)
     {
-        // if ($assessment->image){
-        //     $name_image = $assessment->image;
-        // } else{
-        //     $name_image = 'none';
-        // }
         $name_image = $assessment->image ? $assessment->image : 'none';
-        // $exists = Storage::disk('public')->exists("images/assessment/$name_image");
-        // $contents = Storage::disk('public')->get("images/assessment/$name_image");
-        // $url = Storage::url("images/assessment/$name_image");
-        // dd($url);
-        // if ($exists){
-            
-        // }
-        // dd($exists);
         return view('assessmentsno.show',compact('assessment','name_image'));
     }
 

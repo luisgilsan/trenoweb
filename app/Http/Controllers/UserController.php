@@ -61,7 +61,7 @@ class UserController extends Controller
     public function edit(user $user)
     {
         $roles = Role::get();
-
+        
         return view('users.edit',compact('user','roles'));
     }
 
@@ -74,6 +74,9 @@ class UserController extends Controller
      */
     public function update(Request $request, user $user)
     {
+        dd($user);
+        dd($request->all());
+
         $user->update($request->all());
 
         $user->roles()->sync($request->get('roles'));

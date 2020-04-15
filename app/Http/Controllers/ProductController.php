@@ -47,9 +47,16 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        $product = product::create($request->all());
+        $image = False;
+        if ($image = product::setPicture($request->image)){
+            $request->request->add(['picture'=> $image]);
+        }
+        $obj_to_save = $request->except('image','_token');
+        $product = product::create($obj_to_save);
+
         return redirect()->route('products.edit', $product->id)
         ->with('info','Producto Guardado');
+        echo "Guardado ";
     }
 
     /**
@@ -60,7 +67,8 @@ class ProductController extends Controller
      */
     public function show(product $product)
     {
-        return view('products.show',compact('product'));
+        $name_image = $product->picture ? $product->picture : 'none';
+        return view('products.show',compact('product','name_image'));
     }
 
     /**
@@ -71,7 +79,8 @@ class ProductController extends Controller
      */
     public function edit(product $product)
     {
-        return view('products.edit',compact('product'));
+        $name_image = $product->picture ? $product->picture : 'none';
+        return view('products.edit',compact('product','name_image'));
     }
 
     /**
@@ -83,8 +92,14 @@ class ProductController extends Controller
      */
     public function update(Request $request, product $product)
     {
-        $product->update($request->all());
-
+        $image = False;
+        if ($image = product::updatePicture($request->image,$product->id)){
+            $request->request->add(['picture'=> $image]);
+        }
+        !$request->for_sale ? $request->request->add(['for_sale'=> 0]) : false;
+        !$request->discount ? $request->request->add(['discount'=> 0]) : false;
+        $new_product = $request->except('image','_token');
+        $product->update($new_product);
         return redirect()->route('products.edit', $product->id)
         ->with('info','Producto Actualizado');  
     }
@@ -97,6 +112,7 @@ class ProductController extends Controller
      */
     public function destroy(product $product)
     {
+        product::deletePicture($product->id);
         $product->delete();
 
         return back()->with('info','Producto Eliminado');
