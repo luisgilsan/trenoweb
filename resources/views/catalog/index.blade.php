@@ -8,27 +8,16 @@
     .btn-buy-treno {
         font-size: 100%;
         font-weight: bold;
-        color: rgba(0, 176, 255, 1);
-        border-color: rgba(0, 176, 255, 1);
+        color: rgba(167, 75, 165,1);
+        border-color: rgba(167, 75, 165,1);
         background-color: #ffffff;
         transition: color .5s, background-color 0.8s;
     }
 
-    
-
-
     .btn-buy-treno:hover {
         color: #ffffff;
-        /* background-color: #e3342f; */
-        background-color: rgba(0, 176, 255, 1);
-    }
-
-    .card-sale-treno {
-        background-color: rgba(230, 230, 230, 0.8);
-        
-        /* background-color: #e6e6e6;  */
-        border-color:#00b0ff; 
-        border-width: 3px;
+        /* background-color: rgba(0, 176, 255, 1); */
+        background-color: rgba(167, 75, 165,1);
     }
 
     .card-produc-treno{
@@ -42,8 +31,8 @@
     }
 
     .text-price-sale{
-        font-size: 180%;
-        color:#00b0ff; 
+        font-size: 120%;
+        color: rgba(167, 75, 165,1);
     }
 
     </style>
@@ -54,7 +43,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-12">
-            <div class="card card-sale-treno">
+            <div class="card card-treno">
                 <div class="card-header">
                     Productos
                     @can('products.create', Model::class)
@@ -76,8 +65,18 @@
                                 @if ($index < $size)
                                     <div class="col-md-4"> 
                                         <div class="card card-produc-treno" >
-                                            <img class="card-img-top" src="{{  asset('images/product_placeholder.png') }}" alt="Card image cap">
-                                            <div class="card-body">
+
+                                            @php
+                                                $name_image = $products[$index]->picture ? $products[$index]->picture : 'none';    
+                                            @endphp
+
+
+                                            <img class="card-img-top"   src="{{ Storage::disk('public')->exists("images/products/$name_image")  
+                                            ? Storage::url("images/products/$name_image") :
+                                            asset('images/product_placeholder.png') }}" 
+                                            alt="Imagen" class="img-fluid img-thumbnail" >
+
+                                            <div class="card-body text-center">
                                                 <h5 class="card-title text-product-sale"> {{ $products[$index]->name }} </h5>
                                                 <p class="card-text text-price-sale"> $ {{ $products[$index]->sale_price }} .</p>
                                             </div>

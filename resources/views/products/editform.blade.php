@@ -32,7 +32,7 @@
                 <p><b class="font-bold-treno">Costo:</b></p>
             </div>
             <div class="col-md-8"> 
-                <input name="cost" class="form-control" type="number" value="{{$product->cost}}">
+                <input name="cost" class="form-control" type="number" value="{{$product->cost}}" required>
             </div>
         </div>
 
@@ -41,7 +41,7 @@
                 <p><b class="font-bold-treno">Precio de venta:</b></p>
             </div>
             <div class="col-md-8"> 
-                <input name="sale_price" class="form-control" type="number" value="{{$product->sale_price}}" >
+                <input name="sale_price" class="form-control" type="number" value="{{$product->sale_price}}" required>
             </div>
         </div>
         <div class="form-group row">

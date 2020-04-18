@@ -32,18 +32,16 @@
 @section('content')
     <div class="content">
         <div class="title m-b-md">
-            Bienvenido a Treno!
+            Bienvenido a Valery!
         </div>
 
         <div class="links">
-            <a href="https://laravel.com/docs">Docs</a>
-            <a href="https://laracasts.com">Laracasts</a>
-            <a href="https://laravel-news.com">News</a>
-            <a href="https://blog.laravel.com">Blog</a>
-            <a href="https://nova.laravel.com">Nova</a>
-            <a href="https://forge.laravel.com">Forge</a>
-            <a href="https://vapor.laravel.com">Vapor</a>
-            <a href="https://github.com/laravel/laravel">GitHub</a>
+            <a href="https://laravel.com/docs">Maquillaje</a>
+            <a href="https://laracasts.com">Accesorios</a>
+            <a href="https://laravel-news.com">Perfumeria</a>
+            <a href="https://blog.laravel.com">Hogar</a>
+            <a href="https://nova.laravel.com">Retail</a>
+            <a href="https://forge.laravel.com">Suplementos</a>
         </div>
     </div>
 @endsection

@@ -21,14 +21,19 @@
         .navbar-treno {
             color: #00b0ff;
             /* background-color: #00b0ff; */
-            background-color: rgba(0, 176, 255, 1);
+            background-color: rgba(144, 99, 138, .7);
+            /* rgb(144, 99, 138) */
             transition: background-color .5s;
         }
 
         .navbar-treno:hover {
             color: #00b0ff;
             /* background-color: #00b0ff; */
-            background-color: rgba(0, 176, 255, 0.8);
+            background-color: rgba(144, 99, 138, .4);
+        }
+
+        .purple-backgroung{
+            background-color: rgba(167, 75, 165,1) !important;
         }
 
         .footer-treno {
@@ -37,18 +42,10 @@
             background-color: rgba(33, 33, 33, 1);
         }
 
-        html, body {
-                background-color: #303030;
-                color: #000;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-        }
-
+       
         .card-treno {
             background-color: #e6e6e6; 
-            border-color:#00b0ff; 
+            border-color: rgba(167, 75, 165,.7);
             border-width: 3px;
         }
         .primary-treno{
@@ -61,7 +58,7 @@
 
         .logo-nav-treno{
             
-            width: 50%;
+            width: 15%;
             /* height: 10%; */
             /* background-color: #ff00ff; */
         }
@@ -81,6 +78,24 @@
             /* width: 40%;
             height: 10%; */
         }
+
+        html {
+            min-height: 100% !important;
+            position: relative !important;
+        }
+        body {
+            margin: 0 !important;
+            margin-bottom: 100px !important;
+        }
+        footer {
+            background-color: #90638a !important;
+            position: absolute !important;
+            bottom: 0 !important;
+            width: 100% !important;
+            height: 100px !important;
+            color: black !important;
+        }
+
     </style>
 
     <!-- Scripts -->
@@ -101,7 +116,7 @@
         <nav class="navbar navbar-expand-md navbar-dark navbar-treno shadow-sm">
             <div class="container">
                 <a class="navbar-brand logo-nav-brand-treno" href="{{ url('/') }}">
-                     <img class="logo-nav-treno" src="{{ asset('images/logofondoazul.svg') }}" >
+                     <img class="logo-nav-treno" src="{{ asset('images/valery.png') }}" >
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -201,46 +216,50 @@
     @yield('extraScritps')
 
     <!-- Footer -->
-    <footer class="page-footer font-small blue pt-4 footer-treno">
+    <footer>
 
-        <!-- Footer Links -->
-        <div class="container-fluid text-center text-md-left">
-    
-            <!-- Grid row -->
-            <div class="row">
+      
+        <!-- Grid row -->
+        <div class="row" class="purple-backgroung">
         
-                <!-- Grid column -->
-                <div class="col-md-6 mt-md-0 mt-3">
-                    <img src="{{ asset('images/stores.png') }}" class="rounded mx-auto d-block" style="width:20%" >
+            <!-- Grid column -->
+            <div class="col-md-6  mt-3">
+                <div class="container">
+                    <div class="col-md-10">
+                        <img src="{{ asset('images/stores.png') }}" class="rounded mx-auto d-block" style="width:20%" >
+                    </div>
                 </div>
-                <!-- Grid column -->
-        
-        
-                <!-- Grid column -->
-                <div class="col-md-3 mb-md-0 mb-3">
-                    <img src="{{ asset('images/facebook.png') }}" class="rounded mx-auto d-block" style="width:20%" >
-                </div>
-                <!-- Grid column -->
-        
-                <!-- Grid column -->
-                <div class="col-md-3 mb-md-0 mb-3">
-                    <a href="https://mdbootstrap.com/education/bootstrap/">
-                        <img src="{{ asset('images/instagram.png') }}" class="rounded mx-auto d-block" style="width:20%" >
-                    </a>    
-                </div>
-                <!-- Grid column -->
-        
             </div>
-            <!-- Grid row -->
+            <!-- Grid column -->
+    
+    
+            <!-- Grid column -->
+            <div class="col-md-3  mb-3">
+                <img src="{{ asset('images/facebook.png') }}" class="rounded mx-auto d-block" style="width:20%" >
+            </div>
+            <!-- Grid column -->
+    
+            <!-- Grid column -->
+            <div class="col-md-3  mb-3 mt-3">
+                <div class="container">
+                    <div class="col-md-10">
+                        <a href="https://mdbootstrap.com/education/bootstrap/">
+                            <img src="{{ asset('images/instagram.png') }}" class="rounded mx-auto d-block" style="width:20%" >
+                        </a>    
+                    </div>
+                </div>
+            </div>
+            
     
         </div>
-        <!-- Footer Links -->
-    
-        <!-- Copyright -->
-        <div class="footer-copyright text-center py-3">© 2020 Copyright:
-        <a href="https://mdbootstrap.com/education/bootstrap/"> treno.com.co</a>
+        <div class="row text-center purple-backgroung">
+            <div class="col-md-12  mb-12">
+                <p>© 2020 Copyright:
+                <a href="https://mdbootstrap.com/education/bootstrap/"> treno.com.co</a>
+                </p>
+            </div>
         </div>
-        <!-- Copyright -->
+
     
     </footer>
     <!-- Footer -->
