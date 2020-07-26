@@ -11,6 +11,13 @@
 |
 */
 
+Route::get('pruebacookie', function(){
+	$nueva_cookie = cookie('probando', 'valorprobando', 60);
+	$response = response("Voy a enviarte una cookie");
+	$response->withCookie($nueva_cookie);
+	return $response;
+});
+
 Route::get('/', function () {
     return view('welcomedos');
 });
@@ -21,8 +28,6 @@ Route::get('/jaja', function () {
 
 Route::get('catalog/index', 'CatalogController@index')->name('catalog.index')
                 ->middleware('can:products.show');
-
-
                 
 Route::resource('panel', 'ControllerTest');
 
@@ -32,7 +37,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes(['verify' => true]);
 
-Route::middleware(['auth'])->group(function() {
+// Route::middleware(['auth'])->group(function() {
     
 // Roles
 Route::post('roles/store', 'RoleController@store')->name('roles.store')
@@ -85,5 +90,8 @@ Route::resource('assessments', 'AssessmentController');
 // Unidades de medida
 Route::resource('units', 'UnitMeasurementController');
 
-    
-});
+// Controlador categorias
+Route::resource('category', 'ProductCategoryController');
+
+// Controlador peticiones
+Route::resource('customer_requests', 'CustomerRequestController');

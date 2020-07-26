@@ -2,8 +2,6 @@
 
 <!-- Scripts -->
 @section('scritpsPage')
-<link rel="stylesheet"  href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
-<script src="{{ asset('js/app.js') }}" defer></script>
 <style>
     .btn-buy-treno {
         font-size: 100%;
@@ -40,17 +38,17 @@
 
 @section('content')
 
-<div class="container">
+<div class="container py-3">
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card card-treno">
                 <div class="card-header">
-                    Productos
+                    {{-- Productos
                     @can('products.create', Model::class)
                     <a href="{{ route('products.create') }}" class="btn btn-sm btn-primary float-right">
                         Añadir stock 
                     </a>    
-                    @endcan
+                    @endcan --}}
                 </div>
                 <div class="card-body">
                     <div class="container">
@@ -80,9 +78,9 @@
                                                 <h5 class="card-title text-product-sale"> {{ $products[$index]->name }} </h5>
                                                 <p class="card-text text-price-sale"> $ {{ $products[$index]->sale_price }} .</p>
                                             </div>
-                                            <a href="#" class="btn btn-sm fas fa-cart-arrow-down col-md-12 list-group-item btn-buy-treno" >
+                                            {{-- <a href="#" class="btn btn-sm fas fa-cart-arrow-down col-md-12 list-group-item btn-buy-treno" >
                                                 Agregar al carrito 
-                                            </a>
+                                            </a> --}}
                                         </div>
                                     </div>
 

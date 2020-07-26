@@ -1,0 +1,118 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#btn-mas{
+    display: none;
+}
+
+.container-social{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+.container-whatsapp{
+    position: fixed;
+    bottom: 20px;
+    right: 40px;
+    z-index:2;
+}
+
+.container-show-menu{
+    position: fixed;
+    top: 50vh;
+    left: 0px;
+    z-index:3;
+}
+
+.floating-div-atlas{
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 40%;
+    top: 15vh;
+    height: 85vh;
+    z-index:3;
+}
+
+.redes a, .icon-mas2{
+    display: block;
+    text-decoration: none;
+    background-color: #cc2b2b;
+    color: #fff;
+    width: 55px;
+    height: 55px;
+    line-height: 55px;
+    text-align: center;
+    border-radius: 50%;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.4);
+    transition: all 500ms ease;
+}
+
+.icon-what{
+    display: block;
+    text-decoration: none;
+    background-color: rgba(0, 152, 168, 0.9);
+    color: #fff;
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    text-align: center;
+    border-radius: 50% 50% 10% 10%;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.4);
+    transition: all 500ms ease;
+}
+
+.icon-show-menu{
+    display: block;
+    text-decoration: none;
+    background-color: transparent;
+    color: #fff;
+    width: 120px;
+    height: 36px;
+    line-height: 150px;
+    text-align: center;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.4);
+    transition: all 500ms ease;
+}
+
+.redes a:hover{
+    background: #fff;
+    color: #cc2b2b;
+}
+
+.redes a{
+    margin-bottom: -15px;
+    opacity: 0;
+    visibility: hidden;
+}
+
+#btn-mas:checked~ .redes a{
+    margin-bottom: 10px;
+    opacity: 1;
+    visibility: visible;
+}
+
+.icon-mas2{
+    cursor: pointer;
+    background: #f44141;
+    font-size: 23px;
+ }
+
+.icon-what{
+    cursor: pointer;
+    /* background: transparent; */
+    font-size: 23px;
+ }
+
+.icon-what:hover{
+    background-color: rgba(0, 152, 168, 1);
+}
+
+
+#btn-mas:checked ~ .btn-mas .icon-mas2{
+    transform: rotate(137deg);
+    font-size: 25px;
+} 

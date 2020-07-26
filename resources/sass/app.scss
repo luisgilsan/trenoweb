@@ -6,3 +6,15 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+.js-cookie-consent{
+    position: absolute;
+    top: 0px;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+    z-index: 9999;
+    background-color: #ffffff;
+    border-color: #000000;
+    border: solid 1px;
+}

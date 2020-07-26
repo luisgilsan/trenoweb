@@ -67,6 +67,7 @@ class ProductController extends Controller
      */
     public function show(product $product)
     {
+        dd($product);
         $name_image = $product->picture ? $product->picture : 'none';
         return view('products.show',compact('product','name_image'));
     }

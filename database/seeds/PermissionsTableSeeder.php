@@ -148,6 +148,59 @@ class PermissionsTableSeeder extends Seeder
             'description'   => 'Eliminar unidades del sistema',
         ]);
 
+        // Products Permission's
+        Permission::create([
+            'name'          => 'Listar Categorias',
+            'slug'          => 'category.index',
+            'description'   => 'Lista y navega todas las categorias del sistema.',
+        ]);
+        Permission::create([
+            'name'          => 'Ver Categorias',
+            'slug'          => 'category.show',
+            'description'   => 'Ver detalle de cada categoria del sistema.',
+        ]);
+        Permission::create([
+            'name'          => 'Crear Categoria',
+            'slug'          => 'category.create',
+            'description'   => 'Crear categoria en el sistema.',
+        ]);
+        Permission::create([
+            'name'          => 'Editar Categoria.',
+            'slug'          => 'category.edit',
+            'description'   => 'Editar cualquier categoria del sistema.',
+        ]);
+        Permission::create([
+            'name'          => 'Eliminar Categoria',
+            'slug'          => 'category.destroy',
+            'description'   => 'Eliminar cualquier categoria del sistema.',
+        ]);
+
+        // Customer Requests Permission's
+        Permission::create([
+            'name'          => 'Listar Solicitudes',
+            'slug'          => 'customer_requests.index',
+            'description'   => 'Lista y navega todas las solicitudes enviadas por clientes.',
+        ]);
+        Permission::create([
+            'name'          => 'Ver Solicitudes',
+            'slug'          => 'customer_requests.show',
+            'description'   => 'Ver detalle de lñas solicitudes.',
+        ]);
+        Permission::create([
+            'name'          => 'Crear Solicitudes',
+            'slug'          => 'customer_requests.create',
+            'description'   => 'Crear solicitudes en el sistema.',
+        ]);
+        Permission::create([
+            'name'          => 'Editar Solicitudes.',
+            'slug'          => 'customer_requests.edit',
+            'description'   => 'Edita solicitudes del sistema.',
+        ]);
+        Permission::create([
+            'name'          => 'Eliminar Categoria',
+            'slug'          => 'customer_requests.destroy',
+            'description'   => 'Eliminar solicitudes del sistema.',
+        ]);
 
     }
 }
