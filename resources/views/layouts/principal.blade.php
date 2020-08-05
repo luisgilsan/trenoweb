@@ -10,15 +10,28 @@
         <title>{{ config('app.name', 'Treno') }}</title>
 
         <!-- Fonts -->
-        <link rel="dns-prefetch" href="//fonts.gstatic.com">
+        <link rel="dns-prefetch"  type="image/x-icon" href="//fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
         <!-- Styles -->
         @yield('stylesPlugin')
+        <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <link href="{{ asset('css/estilos-float.css') }}" rel="stylesheet">
 
+        <!-- Latest compiled and minified CSS -->
+        {{-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"> --}}
+
+
         <style>
+
+        .display-true{
+            display: block !important;
+        }
+
+        .display-false{
+            display: none !important;
+        }
 
             .margin-content-atlas{
                 padding-top: 68px !important;
@@ -198,16 +211,13 @@
             }
 
             .img-nav-atlas{
-                border-radius: 15px;
-                /* background-color: #fcb603; */
-                font-weight: bold;
-                width: 100%;
-                height: 14%;
-                background-color: transparent;
+                width: 100% !important;
+                height: 14% !important;
             }
 
             .img-nav-atlas-res-1{
                 height: 12% !important;
+                width: 100% !important;
             }
 
             .img-truck-atlas{
@@ -215,14 +225,14 @@
                 /* background-color: #fcb603; */
                 font-size: 180%;
                 font-weight: bold;
-                width: 80%;
+                width: 70%;
                 height: 40vh;
                 background-color: transparent;
             }
 
             .img-hide-atlas{
                 /* background-color: #fcb603; */
-               
+                width: 120px;
                 background-color: transparent;
             }
 
@@ -232,6 +242,8 @@
                width: 40%;
                background-color: rgb(0, 152, 168);
                font-size: 2.5vh;
+               font-weight: bold;
+
             }
 
             .button-view-atlas{
@@ -276,11 +288,108 @@
             }
 
             .size-one-img-atlas{
-                width: 40%;
+                width: 35%;
             }
             .size-two-img-atlas{
                 width: 70% !important;
             }
+
+            .tip-rounded-div{
+        width:  0px;
+        height:  0px;
+        border-right: 40px solid transparent;
+        border-left: 40px solid transparent;
+        border-top: 30px solid #d57b41;
+        margin: auto;
+    }
+
+    .rounded-div{
+        width: 100%;
+        height:  80px;
+        background-color: #d57b41;
+        margin: auto;
+        border-radius: 12px 12px  0%  0%;
+    }
+
+    .rounded-div-contact{
+        height:  160px !important;
+    }
+
+    .menu-div-atlas{
+        background: #f2f2f2;
+        border-radius: 12px 12px 12px 12px;
+        margin-left: 0px !important;
+    }
+
+    .content {
+        text-align: center;
+    }
+
+    .title {
+        font-size: 84px;
+        color: #ff6b6f;
+    }
+
+    .subtitle-white-atlas{
+        color:#ffffff;
+        font-weight: bold;
+        font-family: 'Century Gothic';
+        font-size: 20px;
+    }
+
+    .subtitle-blue-atlas{
+        color:#05bbaf;
+        font-weight: bold;
+        font-family: 'Century Gothic';
+        font-size: 20px;
+    }
+
+    .subtitle-black-atlas{
+        color:#000;
+        font-weight: bold;
+        font-family: 'Century Gothic';
+        font-size: 20px;
+    }
+
+    .menu-white-atlas{
+        color:#ffffff !important;
+        font-weight: bold !important;
+        font-family: 'Century Gothic' !important;
+        font-size: 30px !important;
+    }
+
+    .img-menu-atlas{
+        width: 150px;
+        margin-top: -70px;
+    }
+
+    .paragraph-white-atlas{
+        color:#ffffff;
+        font-family: 'Century Gothic';
+        font-size: 18px;
+    }
+
+    .paragraph-black-atlas{
+        color:#000;
+        font-family: 'Century Gothic';
+        font-size: 18px;
+    }
+
+    .border-img{
+        border-radius: 10px 10px 10px 10px !important;
+        border-width: 2px !important;
+        border-style: solid !important;
+        border-color: #009898 !important;
+        background: #009898;
+    }
+
+    .carousel-indicators > li {
+    border-radius: 50% !important;
+    }   
+
+    .products-button-top{
+        margin-top:40% !important;
+    }
 
         </style>
 
@@ -289,6 +398,13 @@
         <!-- Scripts -->
         <script src="{{ asset('js/jquery-331.js') }}" ></script>
         <script src="{{ asset('js/bootstrap413.js') }}" defer></script>
+
+        <!-- JavaScript -->
+    {{-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script> --}}
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    {{-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script> --}}
+
+
         <script src="{{ asset('js/bootstrap-fileinput//js/plugins/piexif.js')}}" type="text/javascript"></script>  
         <script src="{{ asset('js/bootstrap-fileinput/js/plugins/sortable.js')}}" type="text/javascript"></script> 
         <script src="{{ asset('js/bootstrap-fileinput/js/fileinput.js')}}" type="text/javascript"></script> 
@@ -313,18 +429,17 @@
     <body>
         <div class="container-whatsapp" >
             <div>
-                <a alt="img-what" href="https://www.google.com/" target="_blank"><img class="icon-what"
+                <a alt="img-what" href="https://wa.link/w6tvit" target="_blank"><img class="icon-what"
                     src="{{ asset('images/atlas-whatsapp.png') }}" alt="img-what" /></a>
             </div>
         </div>
-        <div class="container-show-menu" id="hideshow"  >
-            <div id="content">
-                <button style="background: transparent; border: none;">
-                    <img class="icon-show-menu" src="{{ asset('images/show-menu.png') }}" alt="img-what" />
-                </button>
+        <div class="container-show-menu" id="hideshow" >
+            <div id="content"  >
+                <a style="background: transparent !important; border: none; cursor: pointer;">
+                    <img src="{{ asset('images/show-menu.png') }}" style="width:180px; !important" />
+                </a>
             </div>
         </div>
-
         <div class="floating-div-atlas" id="content2">
             <div class="container-fluid text-center">
                 <img class="img-truck-atlas" src=" {{  
@@ -362,8 +477,7 @@
                     <!-- Actual search box -->
                     <div class="container-fluid">
                         <a class="size-one-img-atlas" id="logo-size"  href="{{ url('/') }}">
-                            <img class="img-nav-atlas" id="nav-img" src=" {{  
-                                asset('images/atlas_nav.png') }}" alt="Imagen">
+                            <img id="nav-img" style="width: 100% !important;" src=" {{ asset('images/atlas_nav.png') }}" alt="Imagen">
                         </a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                             <span class="navbar-toggler-icon"></span>
@@ -375,18 +489,29 @@
                             </ul>
                             <!-- Right Side Of Navbar -->
                             <ul class="navbar-nav ml-auto">
-                                <li class="nav-item">
-                                    <a class="nav-link font-nav-atlas" href="#initpage">Inicio</a>
+                                <li class="nav-item" id="home-div">
+                                    <a class="nav-link font-nav-atlas"  href="#initpage">Inicio</a>
+                                </li>
+                                <li class="nav-item" id="home-menu" style="display: none;">
+                                    <a class="nav-link font-nav-atlas"  href="{{ url('/') }}">Inicio</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link font-nav-atlas" href="#aboutus">Nosotros</a>
+                                    <a class="nav-link font-nav-atlas" href="{{ url('/aboutus') }}">Nosotros</a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link font-nav-atlas" href="#products">Productos</a>
+                                <li class="nav-item" id="products-div">
+                                    <a class="nav-link font-nav-atlas" href="{{ url('/productslist') }}">Productos</a>
                                 </li>
-                                <li class="nav-item">
+                                {{-- <li class="nav-item" id="producs-menu" style="display: none;">
+                                    <a class="nav-link font-nav-atlas" href="#products">Productoss</a>
+                                </li> --}}
+                                <li class="nav-item" id="services-menu">
                                     <a class="nav-link font-nav-atlas" href="#services">Servicios</a>
                                 </li>
+                                {{-- @can('roles.index')
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('users.index') }}" >Usuarios</a>
+                                </li>
+                                @endcan --}}
                                 @can('roles.index')
                                 <li class="nav-item">
                                     <a class="nav-link font-nav-atlas" href="{{ route('customer_requests.index') }}">Solicitudes</a>
@@ -430,12 +555,14 @@
                         console.log(win.width());
                         if (win.width() >= 800) { 
                             console.log('resstablece'); 
-                            document.getElementById("nav-img").classList.remove("img-nav-atlas-res-1");
+                            document.getElementById("logo-size").classList.add("size-one-img-atlas");
+                            // document.getElementById("nav-img").classList.remove("img-nav-atlas-res-1");
                             document.getElementById("logo-size").classList.remove("size-two-img-atlas");
                             }
                         if (win.width() < 800) { 
                             console.log('logo change');
-                            document.getElementById("nav-img").classList.add("img-nav-atlas-res-1"); 
+                            document.getElementById("logo-size").classList.remove("size-one-img-atlas");
+                            // document.getElementById("nav-img").classList.add("img-nav-atlas-res-1"); 
                             document.getElementById("logo-size").classList.add("size-two-img-atlas");   
                         }
                         if (win.width() >=850) { 
@@ -446,6 +573,7 @@
                             document.getElementById("content2").classList.add("atlas-hide");
                             document.getElementById("content").classList.add("atlas-hide");   
                         }
+
 
                     console.log('loading div hide');
                     jQuery(document).ready(function(){
@@ -468,14 +596,16 @@
                         // Condicionales Tamaño Nav
                         if (win.width() >= 800) { 
                             console.log('resstablece'); 
+                            document.getElementById("logo-size").classList.add("size-one-img-atlas");
                             document.getElementById("logo-size").classList.remove("size-two-img-atlas");
-                            document.getElementById("nav-img").classList.remove("img-nav-atlas-res-1");
+                            // document.getElementById("nav-img").classList.remove("img-nav-atlas-res-1");
                             
                             }
                         if (win.width() < 800) { 
                             console.log('logo change');
+                            document.getElementById("logo-size").classList.remove("size-one-img-atlas");
                             document.getElementById("logo-size").classList.add("size-two-img-atlas");
-                            document.getElementById("nav-img").classList.add("img-nav-atlas-res-1");
+                            // document.getElementById("nav-img").classList.add("img-nav-atlas-res-1");
                         }
                         // Condicionales Tamaño Nav
                         if (win.width() >=850) { 
@@ -491,15 +621,6 @@
                     });
                </script>
             </div>
-
-            {{-- <div class="fixed-top"> --}}
-
-            
-                {{-- <button id="hideshow" style="margin-top: 40vh; margin-left: 0vw;" class="btn button-view-atlas"> Ver</button> --}}
-                
-            {{-- </div> --}}
-
-            {{-- <button id="hideshow" style="margin-top: 40vh; margin-left: 0vw;" class="btn button-view-atlas"> Ver</button> --}}
 
             @if(session('info'))
             <div class="container">

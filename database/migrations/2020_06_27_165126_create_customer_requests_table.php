@@ -20,6 +20,7 @@ class CreateCustomerRequestsTable extends Migration
             $table->string('city',255)->nullable();
             $table->string('address',255)->nullable();
             $table->string('message',1024);
+            $table->bigInteger('phone')->nullable();
             $table->enum('state', ['draft', 'read']);
             $table->timestamps();
         });

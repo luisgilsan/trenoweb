@@ -22,8 +22,12 @@ Route::get('/', function () {
     return view('welcomedos');
 });
 
-Route::get('/jaja', function () {
-    return view('welcome');
+Route::get('/aboutus', function () {
+    return view('aboutus');
+});
+
+Route::get('/productslist', function () {
+    return view('products');
 });
 
 Route::get('catalog/index', 'CatalogController@index')->name('catalog.index')

@@ -33,11 +33,8 @@ class CatalogController extends Controller
 
     public function index()
     {
-
         $products = product::paginate();
-
         return view('catalog.index', compact('products'));
-
     }
 
 

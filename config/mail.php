@@ -16,7 +16,7 @@ return [
     |
     */
 
-    'driver' => env('MAIL_DRIVER', 'smtp'),
+    'driver' => 'smtp',
 
     /*
     |--------------------------------------------------------------------------
@@ -29,7 +29,7 @@ return [
     |
     */
 
-    'host' => env('MAIL_HOST', 'smtp.mailgun.org'),
+    'host' => 'mail.atlasrepuestos.com',
 
     /*
     |--------------------------------------------------------------------------
@@ -42,7 +42,7 @@ return [
     |
     */
 
-    'port' => env('MAIL_PORT', 587),
+    'port' => 26,
 
     /*
     |--------------------------------------------------------------------------
@@ -56,8 +56,8 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),
-        'name' => env('MAIL_FROM_NAME', 'Example'),
+        'address' => 'informacion@atlasrepuestos.com',
+        'name' => 'ATLAS',
     ],
 
     /*
@@ -71,7 +71,7 @@ return [
     |
     */
 
-    'encryption' => env('MAIL_ENCRYPTION', 'tls'),
+    'encryption' =>  null,
 
     /*
     |--------------------------------------------------------------------------
@@ -84,9 +84,9 @@ return [
     |
     */
 
-    'username' => env('MAIL_USERNAME'),
+    'username' => 'informacion@atlasrepuestos.com',
 
-    'password' => env('MAIL_PASSWORD'),
+    'password' => 'Informacion#Atlas',
 
     /*
     |--------------------------------------------------------------------------
@@ -131,6 +131,6 @@ return [
     |
     */
 
-    'log_channel' => env('MAIL_LOG_CHANNEL'),
+    // 'log_channel' => env('MAIL_LOG_CHANNEL'),
 
 ];

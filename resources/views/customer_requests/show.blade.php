@@ -39,6 +39,14 @@
                         </div>
                         <div class="row">
                             <div class="col-md-2"> 
+                                <p><b class="font-bold-treno">Teléfono:</b></p>
+                            </div>
+                            <div class="col-md-10"> 
+                                <p>{{ $customer_request->phone }} </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-2"> 
                                 <p><b class="font-bold-treno">Ciudad:</b></p>
                             </div>
                             <div class="col-md-10"> 

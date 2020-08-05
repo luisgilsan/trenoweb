@@ -13,6 +13,6 @@ class customer_request extends Model
      * @var array
      */
     protected $fillable = [
-        'email', 'name','city','address','message','state',
+        'email', 'name','city','address','message','state','phone',
     ];
 }
