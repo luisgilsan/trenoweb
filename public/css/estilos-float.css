@@ -16,8 +16,8 @@
 
 .container-whatsapp{
     position: fixed;
-    bottom: 20px;
-    right: 40px;
+    bottom: 80px;
+    right: 10px;
     z-index:2;
 }
 

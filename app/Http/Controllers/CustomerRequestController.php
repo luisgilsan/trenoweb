@@ -43,8 +43,9 @@ class CustomerRequestController extends Controller
         $obj_to_save = $request->except('_token');
         $obj_to_save['state'] = 'draft';
         $customer_requests = customer_request::create($obj_to_save);
-        Mail::to(['luisgilsan_007@hotmail.com','robertoanonimato91@gmail.com'])->send(new RequestTemplate($obj_to_save));
-        echo "Solicitud enviada con exito!";
+        Mail::to(['luisgilsan_007@hotmail.com','robertoanonimato91@gmail.com'])->send(new RequestTemplate($obj_to_save));        
+    
+        return redirect()->back()->with('alert', 'Solicitud enviada!');
     }
 
     /**

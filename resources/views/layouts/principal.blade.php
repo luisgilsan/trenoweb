@@ -238,12 +238,9 @@
 
             .button-float-atlas{
                color: #ffffff;
-               margin-left: 20%;
                width: 40%;
-               background-color: rgb(0, 152, 168);
-               font-size: 2.5vh;
+               background-color: #05bbaf;
                font-weight: bold;
-
             }
 
             .button-view-atlas{
@@ -295,13 +292,13 @@
             }
 
             .tip-rounded-div{
-        width:  0px;
-        height:  0px;
-        border-right: 40px solid transparent;
-        border-left: 40px solid transparent;
-        border-top: 30px solid #d57b41;
-        margin: auto;
-    }
+                width:  0px;
+                height:  0px;
+                border-right: 40px solid transparent;
+                border-left: 40px solid transparent;
+                border-top: 30px solid #d57b41;
+                margin: auto;
+            }
 
     .rounded-div{
         width: 100%;
@@ -380,7 +377,6 @@
         border-width: 2px !important;
         border-style: solid !important;
         border-color: #009898 !important;
-        background: #009898;
     }
 
     .carousel-indicators > li {
@@ -456,7 +452,7 @@
                 </div>
             </div>
             <a href="#portfolio">
-                <button class="btn button-float-atlas"> Cotiza con nosotros</button>
+                <button class="btn button-float-atlas" style="margin-left: 20%;"> Cotiza con nosotros</button>
             </a>
             <br/>
 
@@ -659,7 +655,7 @@
         <div class="row py-3">
             <div class="col-md-4 offset-md-4 text-center">
                 <!-- Facebook -->
-                <a class="fb-ic color-text_atlas">
+                <a class="fb-ic color-text_atlas" target="_blank" href="https://www.facebook.com/ATLAS-Repuestos-y-Servicio-SAS-105574301251019">
                     <i class="fa fa-facebook-f fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
                 </a>
                 <!-- Twitter -->

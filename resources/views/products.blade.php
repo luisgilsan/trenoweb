@@ -2,7 +2,9 @@
 
 
 <style>
-
+.motors-responsive{
+    height: 120px !important;
+}
 
 </style>
 
@@ -55,7 +57,7 @@
         <div class="menu-div-atlas">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="rounded-div" style=" border-radius: 12px 12px 0px 0px !important;">
+                    <div class="rounded-div" id="div-motors" style=" border-radius: 12px 12px 0px 0px !important;">
                         <p class="menu-white-atlas text-center py-3">MOTORES & TRANSMISIÓN</p>
                     </div>
                     <div class="tip-rounded-div"> </div>
@@ -192,6 +194,16 @@
         </div>
     </div>
 
+    
+    <script>
+        var msg = '{{Session::get('alert')}}';
+        console.log('Alerta');
+         var exist = '{{Session::has('alert')}}';
+        if(exist){
+          alert(msg);
+        }
+    </script>
+    
     <script type="text/javascript">
         document.getElementById("products-div").classList.add("display-true");
         document.getElementById("home-div").classList.add("display-false");
@@ -210,6 +222,7 @@
         document.getElementById("miscelaneos-web").classList.remove("display-false");
         document.getElementById("motor-uno").classList.add("py-2");
         document.getElementById("tren-uno").classList.add("py-2");
+        document.getElementById("div-motors").classList.remove("motors-responsive");   
     }
     if (win.width() < 850) { 
         document.getElementById("contact-us").classList.add("rounded-div-contact");
@@ -217,6 +230,7 @@
         document.getElementById("miscelaneos-web").classList.add("display-false");
         document.getElementById("motor-uno").classList.remove("py-2");
         document.getElementById("tren-uno").classList.remove("py-2");
+        document.getElementById("div-motors").classList.add("motors-responsive");
     }
         
     $(window).on('resize', function(){
@@ -229,6 +243,7 @@
             document.getElementById("miscelaneos-web").classList.remove("display-false");
             document.getElementById("motor-uno").classList.add("py-2");
             document.getElementById("tren-uno").classList.add("py-2");
+            document.getElementById("div-motors").classList.remove("motors-responsive");
         }
         if (win.width() < 850) { 
             console.log('RESPONSIVE');
@@ -238,6 +253,7 @@
             document.getElementById("motor-uno").classList.remove("py-2");
             document.getElementById("tren-uno").classList.remove("py-2");
             document.getElementById("contact-us").classList.add("rounded-div-contact");
+            document.getElementById("div-motors").classList.add("motors-responsive");
         }
     });
 </script>

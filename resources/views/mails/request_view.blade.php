@@ -18,7 +18,7 @@
 
     <p>Cordialmente,</p>
 
-    <img src=" {{asset('images/img_tractor_atlas.png') }}" style="width:20px !important;">
+    <img src=" {{asset('images/img_tractor_atlas.png') }}" style="width:80px !important;">
     <p>ATLAS</p>
     
 </body>

@@ -1,21 +1,11 @@
 @extends('layouts.principal')
 
-
-<style>
-
-</style>
-
-<script>
-    // $('.carousel').carousel({
-    //     interval: 300});
-</script>
-
 @section('content')    
 
     <div class="container py-5">
         <hr  style=" height: 1px; background-color: #2f494a;"/>
     </div>
-    <div class="container-fluid" >
+    <div class="container-fluid py-2">
         <div class="row" id="aboutus">
             <div class="col-md-12">
                 <div class="rounded-div" style="background-color: #05bbaf; border-radius: 0px 0px 12px 12px !important;">
@@ -32,29 +22,28 @@
                 </p>
             </div>
             <hr  style=" height: 1px; background-color: #2f494a;"/>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="rounded-div" style="background-color: #bf9721; border-radius: 0px 0px 12px 12px !important;">
-                        <p class="menu-white-atlas text-center py-3">MISIÓN</p>
-                    </div>
-                    <div class="tip-rounded-div" style="border-top: 40px solid #bf9721;"> </div>
-                    <p class="paragraph-black-atlas text-justify">
-                        Nuestra misión es crear un laso de honestidad y confianza con nuestros clientes, para consigo trabajar juntos en fin de la productividad de sus negocios, respaldados de la más alta calidad de nuestros servicios.
-                    </p>
-                    <p class="paragraph-black-atlas text-justify">
-                        La honestidad y la integridad nos permiten diferenciarnos en el mercado y nos contribuye para seguir siendo líderes a nivel nacional e internacional
-                    </p>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="rounded-div" style="background-color: #bf9721; border-radius: 0px 0px 12px 12px !important;">
+                    <p class="menu-white-atlas text-center py-3">MISIÓN</p>
                 </div>
-                <div class="col-md-6">
-                    <div class="rounded-div" style=" border-radius: 0px 0px 12px 12px !important;">
-                        <p class="menu-white-atlas text-center py-3">VISIÓN</p>
-                    </div>
-                    <div class="tip-rounded-div"> </div>
-
-                    <p class="paragraph-black-atlas text-justify">
-                        Nuestras visión es basada en nuestra experiencia, y conocimiento del mercado, queremos convertirnos en la mejor empresa con más alta calidad de servicio a nivel nacional y extender nuestra capacidad de trabajo a todo sur américa.
-                    </p>
+                <div class="tip-rounded-div" style="border-top: 40px solid #bf9721;"> </div>
+                <p class="paragraph-black-atlas text-justify">
+                    Nuestra misión es crear un laso de honestidad y confianza con nuestros clientes, para consigo trabajar juntos en fin de la productividad de sus negocios, respaldados de la más alta calidad de nuestros servicios.
+                </p>
+                <p class="paragraph-black-atlas text-justify">
+                    La honestidad y la integridad nos permiten diferenciarnos en el mercado y nos contribuye para seguir siendo líderes a nivel nacional e internacional
+                </p>
+            </div>
+            <div class="col-md-6">
+                <div class="rounded-div" style=" border-radius: 0px 0px 12px 12px !important;">
+                    <p class="menu-white-atlas text-center py-3">VISIÓN</p>
                 </div>
+                <div class="tip-rounded-div"> </div>
+                <p class="paragraph-black-atlas text-justify">
+                    Nuestras visión es basada en nuestra experiencia, y conocimiento del mercado, queremos convertirnos en la mejor empresa con más alta calidad de servicio a nivel nacional y extender nuestra capacidad de trabajo a todo sur américa.
+                </p>
             </div>
         </div>
     </div>
@@ -114,6 +103,16 @@
             </div>
         </div>
     </div>
+
+    
+    <script>
+        var msg = '{{Session::get('alert')}}';
+        console.log('Alerta');
+         var exist = '{{Session::has('alert')}}';
+        if(exist){
+          alert(msg);
+        }
+    </script>
 
     <script type="text/javascript">
         document.getElementById("products-div").classList.add("display-true");

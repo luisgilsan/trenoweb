@@ -22,26 +22,22 @@
           <div class="carousel-item active">
             <img src="{{ asset('images/slider_3-copia.jpg') }}" class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
-              <h3>ATLAS</h3>
-              <p>Todo en maquinaria pesada.</p>
+              <h3 class="subtitle-white-atlas">ATLAS</h3>
+              <p  class="paragraph-white-atlas">Todo en maquinaria pesada.</p>
             </div>
           </div>
           <div class="carousel-item">
             <img src="{{ asset('images/slider_4-copia.jpg') }}" class="d-block w-100"  alt="...">
-
-            {{-- position: absolute; clip: rect(0, 100px, 200px, 0);
-            Fuente: https://www.iteramos.com/pregunta/18749/como-puedo-mostrar-solo-una-parte-de-una-imagen-en-html--css --}}
-
             <div class="carousel-caption d-none d-md-block">
-              <h3>ATLAS</h3>
-              <p>Todo en maquinaria pesada.</p>
+              <h3 class="subtitle-white-atlas">ATLAS</h3>
+              <p class="paragraph-white-atlas">Todo en maquinaria pesada.</p>
             </div>
           </div>
           <div class="carousel-item">
             <img src="{{ asset('images/slider_5-copia.jpg') }}" class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
-              <h3>ATLAS</h3>
-              <p>Todo en maquinaria pesada.</p>
+              <h3 class="subtitle-white-atlas">ATLAS</h3>
+              <p class="paragraph-white-atlas">Todo en maquinaria pesada.</p>
             </div>
           </div>
         </div>
@@ -64,18 +60,27 @@
                     </div>
                     <div class="tip-rounded-div" style="border-top: 40px solid #05bbaf;">
                     </div>
-                    <div class="row">
-                        <div class="col-md-8 text-center"> 
-                            <div class="py-2">
-                            </div>
-                            <img class="card-img-top border-img " style="width: 70%;" src="{{ asset('images/brands_atlas.jpg')}}" alt="Card image cap">
-                        </div>
-                        <div class="col-md-4 text-center py-3" style="vertical-align: baseline !important;"> 
-                            <a>
-                                <button class="btn button-float-atlas menu-white-atlas" id="products-button" style="margin-left:-10% !important; width: 220px !important; font-size: 20px !important;">VER PRODUCTOS</button>
-                            </a>
-                        </div>
-                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 text-center"> 
+                    <div class="py-2">
+                    </div>          
+                    <img class="border-img" style="width: 140px;" src="{{ asset('images/logos/bobcat.svg')}}">
+                    <img class="border-img" style="width: 140px;" src="{{ asset('images/logos/case.png')}}">
+                    <img class="border-img" style="width: 140px;" src="{{ asset('images/logos/cat.png')}}">
+                    <img class="cborder-img" style="width: 140px;" src="{{ asset('images/logos/ford.png')}}">
+                    <img class="border-img" style="width: 140px;" src="{{ asset('images/logos/holland.png')}}">
+                    <img class="border-img" style="width: 140px;" src="{{ asset('images/logos/john.png')}}">
+                    <img class="border-img" style="width: 140px;" src="{{ asset('images/logos/komatsu.gif')}}">
+                    <img class="border-img" style="width: 140px;" src="{{ asset('images/logos/scania.png')}}">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 text-center py-2" > 
+                    <a href="{{ url('/productslist') }}">
+                        <button class="btn button-float-atlas menu-white-atlas"  style=" width: 300px !important;">VER PRODUCTOS</button>
+                    </a>
                 </div>
             </div>
         </div>    
@@ -83,9 +88,11 @@
     </div>
 
     <div class="nav-backgroud-standard-black">
-        <div class="row">
-            <div class="col-md-12 text-center" id="services">
-                <img src="{{ asset('images/services.png') }}" style="width: 360px;"/>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12 text-center" id="services">
+                    <img src="{{ asset('images/services.png') }}" style="width: 360px;"/>
+                </div>
             </div>
         </div>
         <div class="container-fluid py-3">
@@ -132,8 +139,7 @@
                 </div>
                 <img class="img-menu-atlas" src="{{ asset('images/logistics_icon.png')}}">
             </div>
-        </div>
-                                
+        </div>                        
         <div class="row py-3">
             <div class="col-md-6 offset-md-3 text-center">
                 <div class="menu-div-atlas">
@@ -148,9 +154,30 @@
                 <img class="img-menu-atlas" src="{{ asset('images/service_icon.png')}}">
             </div>
         </div>
-
     </div> 
     <br/>
+
+    {{-- @if(Session::has('jsAlert'))
+
+        <script type="text/javascript" >
+            alert({{ session()->get('jsAlert') }});
+        </script>
+
+    @endif --}}
+
+    <script>
+        var msg = '{{Session::get('alert')}}';
+        console.log('Alerta');
+         var exist = '{{Session::has('alert')}}';
+        if(exist){
+          alert(msg);
+        }
+    </script>
+
+    {{-- <script>
+        alert({{ session()->get('jsAlert') }});
+    </script> --}}
+
     <div>
         <div class="container" id="portfolio">
             <div class="row">
@@ -212,11 +239,9 @@
         console.log(win.width());
         if (win.width() >= 850) { 
             document.getElementById("contact-us").classList.remove("rounded-div-contact");
-            document.getElementById("products-button").classList.add("products-button-top");
         }
         if (win.width() < 850) { 
             document.getElementById("contact-us").classList.add("rounded-div-contact");
-            document.getElementById("products-button").classList.remove("products-button-top");
         }
             
         $(window).on('resize', function(){
@@ -225,12 +250,10 @@
              if (win.width() >= 850) { 
             console.log('WEB');
             document.getElementById("contact-us").classList.remove("rounded-div-contact");
-            document.getElementById("products-button").classList.add("products-button-top");
             }
             if (win.width() < 850) { 
                 console.log('RESPONSIVE');
                 document.getElementById("contact-us").classList.add("rounded-div-contact");
-                document.getElementById("products-button").classList.remove("products-button-top");
             }
         });
     </script>

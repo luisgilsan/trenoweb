@@ -19,8 +19,8 @@ Route::get('pruebacookie', function(){
 });
 
 Route::get('/', function () {
-    return view('welcomedos');
-});
+    return view('welcomedos')->with('jsAlert', 'Solicitud enviada');
+})->name('ppal.view');
 
 Route::get('/aboutus', function () {
     return view('aboutus');
