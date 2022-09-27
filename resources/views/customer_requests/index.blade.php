@@ -15,6 +15,7 @@
                                 <th>Nombre cliente</th>
                                 {{-- <th>Estado</th> --}}
                                 <th>Email</th>
+                                <th>Fecha</th>
                                 <th colspan="3">&nbsp;</th>
                             </tr>
                         </thead>
@@ -22,8 +23,8 @@
                             @foreach ($lines as $line)
                                 <tr>
                                     <td>{{ $line->name }}</td>
-                                    {{-- <td>{{ $line->state }}</td> --}}
                                     <td>{{ $line->email }}</td>
+                                    <td>{{ $line->created_at }}</td>
                                     <td>
                                         @can('customer_requests.show')
                                             <a  href="{{ route('customer_requests.show', $line->id) }}" 

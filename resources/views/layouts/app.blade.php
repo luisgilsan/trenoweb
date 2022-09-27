@@ -261,7 +261,7 @@
             }
 
             .back_uno_nabvar{
-                background-color: rgba(0, 0, 0, 0.85) !important;
+                background-color: rgba(0, 77, 45, 0.99) !important;
                 font-size: 12px;
                 transition: font-size .5s;
             }
@@ -315,8 +315,7 @@
         @include('cookieConsent::index')
         <div class="body-atlas">
             <div class="fixed-top">
-            {{-- <nav class="navbar navbar-expand-lg navbar-dark navbar-treno  fixed-top"> --}}
-                <nav class="navbar navbar-expand-lg navbar-dark back_uno_nabvar " id="menu">
+                <nav class="navbar navbar-expand-lg back_uno_nabvar " id="menu">
                     <!-- Actual search box -->
                     <div class="container-fluid">
                         <a class="size-one-img-atlas" id="logo-size"  href="{{ url('/') }}">
@@ -467,17 +466,9 @@
                 <a class="fb-ic color-text_atlas">
                     <i class="fa fa-facebook-f fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
                 </a>
-                <!-- Twitter -->
-                <a class="tw-ic color-text_atlas">
-                    <i class="fa fa-twitter fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
-                </a>
                 <!--Instagram-->
                 <a class="ins-ic color-text_atlas">
                     <i class="fa fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
-                </a>
-                <!--Pinterest-->
-                <a class="pin-ic color-text_atlas">
-                    <i class="fa fa-pinterest fa-lg white-text fa-2x"> </i>
                 </a>
             </div>
         </div>

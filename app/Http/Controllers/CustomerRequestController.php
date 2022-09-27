@@ -7,7 +7,7 @@ use Mail;
 use App\customer_request;
 use App\Mail\RequestTemplate;
 use Illuminate\Http\Request;
-
+use DB;
 
 class CustomerRequestController extends Controller
 {
@@ -18,7 +18,15 @@ class CustomerRequestController extends Controller
      */
     public function index()
     {
-        $lines = customer_request::paginate();
+        // $lines = customer_request::paginate()->orderBy('created_date', 'desc');
+
+        $lines = DB::table('customer_requests')->orderBy('created_at', 'desc')->paginate();
+
+
+
+        // $lines = DB::table('official_news')->orderBy('created_date', 'desc')->paginate(7);
+
+
         return view('customer_requests.index', compact('lines'));
     }
 
@@ -42,7 +50,6 @@ class CustomerRequestController extends Controller
     {
         $obj_to_save = $request->except('_token');
         $obj_to_save['state'] = 'draft';
-        $customer_requests = customer_request::create($obj_to_save);
         Mail::to(['luisgilsan_007@hotmail.com','robertoanonimato91@gmail.com'])->send(new RequestTemplate($obj_to_save));        
     
         return redirect()->back()->with('alert', 'Solicitud enviada!');

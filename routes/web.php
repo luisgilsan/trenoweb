@@ -26,6 +26,14 @@ Route::get('/aboutus', function () {
     return view('aboutus');
 });
 
+Route::get('/apps', function () {
+    return view('apps');
+});
+
+Route::get('/obras', function () {
+    return view('obras');
+});
+
 Route::get('/productslist', function () {
     return view('products');
 });

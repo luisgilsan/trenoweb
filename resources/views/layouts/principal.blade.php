@@ -7,7 +7,7 @@
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('app.name', 'Treno') }}</title>
+        <title>{{ config('app.name', 'RUBBER') }}</title>
 
         <!-- Fonts -->
         <link rel="dns-prefetch"  type="image/x-icon" href="//fonts.gstatic.com">
@@ -34,7 +34,7 @@
         }
 
             .margin-content-atlas{
-                padding-top: 68px !important;
+                padding-top: 0px !important;
             }   
 
             .margin-subview-atlas{
@@ -165,7 +165,9 @@
                 min-height: 100vh !important;
                 flex-direction: column !important;
             }
-
+            .font-tahoma {
+                font-family: Tahoma, sans-serif;
+            }
             .main {
                 flex: 1 !important;
             }
@@ -225,7 +227,7 @@
                 /* background-color: #fcb603; */
                 font-size: 180%;
                 font-weight: bold;
-                width: 70%;
+                width: 55%;
                 height: 40vh;
                 background-color: transparent;
             }
@@ -271,13 +273,13 @@
             }
 
             .back_uno_nabvar{
-                background-color: rgba(0, 0, 0, 0.85) !important;
-                font-size: 12px;
+                background-color: rgba(0, 77, 45, 0.99) !important;
+                font-size: 13px;
                 transition: font-size .5s;
             }
 
             .back_dos_nabvar{
-                font-size: 10px;
+                font-size: 12px;
             }
 
             .atlas-hide{
@@ -313,7 +315,7 @@
     }
 
     .menu-div-atlas{
-        background: #f2f2f2;
+        background: #ffffff;
         border-radius: 12px 12px 12px 12px;
         margin-left: 0px !important;
     }
@@ -329,22 +331,19 @@
 
     .subtitle-white-atlas{
         color:#ffffff;
-        font-weight: bold;
-        font-family: 'Century Gothic';
+        font-family: Tahoma, sans-serif;
         font-size: 20px;
     }
 
     .subtitle-blue-atlas{
         color:#05bbaf;
-        font-weight: bold;
-        font-family: 'Century Gothic';
+        font-family: Tahoma, sans-serif;
         font-size: 20px;
     }
 
     .subtitle-black-atlas{
         color:#000;
-        font-weight: bold;
-        font-family: 'Century Gothic';
+        font-family: Tahoma, sans-serif;
         font-size: 20px;
     }
 
@@ -362,21 +361,21 @@
 
     .paragraph-white-atlas{
         color:#ffffff;
-        font-family: 'Century Gothic';
-        font-size: 18px;
+        font-family: Tahoma, sans-serif;
+        font-size: 22px;
     }
 
     .paragraph-black-atlas{
         color:#000;
-        font-family: 'Century Gothic';
-        font-size: 18px;
+        font-family: Tahoma, sans-serif;
+        font-size: 22px;
     }
 
     .border-img{
-        border-radius: 10px 10px 10px 10px !important;
+        /* border-radius: 10px 10px 10px 10px !important;
         border-width: 2px !important;
         border-style: solid !important;
-        border-color: #009898 !important;
+        border-color: #009898 !important; */
     }
 
     .carousel-indicators > li {
@@ -425,58 +424,36 @@
     <body>
         <div class="container-whatsapp" >
             <div>
-                <a alt="img-what" href="https://wa.link/w6tvit" target="_blank"><img class="icon-what"
+                <a alt="img-what" href="https://wa.link/zqkvoz" target="_blank"><img class="icon-what"
                     src="{{ asset('images/atlas-whatsapp.png') }}" alt="img-what" /></a>
             </div>
         </div>
-        <div class="container-show-menu" id="hideshow" >
-            <div id="content"  >
-                <a style="background: transparent !important; border: none; cursor: pointer;">
-                    <img src="{{ asset('images/show-menu.png') }}" style="width:180px; !important" />
-                </a>
+        <div class="container-facebook" >
+            <div>
+                <a alt="img-what" href="https://www.facebook.com/Rubber-Granulta-sas-100263915411593" target="_blank"><img class="icon-facebook"
+                    src="{{ asset('images/LogoFacebook.png') }}" alt="img-what" /></a>
             </div>
         </div>
-        <div class="floating-div-atlas" id="content2">
-            <div class="container-fluid text-center">
-                <img class="img-truck-atlas" src=" {{  
-                    asset('images/img_tractor_atlas.png') }}" 
-                    alt="Imagen" class="img-fluid img-thumbnail">
+        <div class="container-instagram" >
+            <div>
+                <a alt="img-what" href="https://www.instagram.com/rubber_granulate_s.a.s/?igshid=14nt9rmlcckny" target="_blank"><img class="icon-instagram"
+                    src="{{ asset('images/LogoInstagram.png') }}" alt="img-what" /></a>
             </div>
-            <div class="container-fluid text-floating-atlas text-center">
-                <div style="width:80%; margin-left:10%">
-                    <p class="text-justify" >
-                        Contamos con la experiencia de mas de 15 años en el mercado y ademas 
-                        de nuestro servicio personalizado el ahorro de dinero en sus órdenes de
-                        compra es otro de nuestros beneficiosasasa.  
-                    </p>
-                </div>
-            </div>
-            <a href="#portfolio">
-                <button class="btn button-float-atlas" style="margin-left: 20%;"> Cotiza con nosotros</button>
-            </a>
-            <br/>
-
-            <div class="container-fluid text-center">
-                <button id="hideshow2" class="btn" style="width: 30px; height: 10px; margin-top:-30px; margin-left:60%">
-                    <img class="img-hide-atlas" src=" {{  
-                        asset('images/hide_menu.png') }}" 
-                        alt="Imagen" class="img-fluid img-thumbnail">
-                </button>
-            </div>   
         </div>
-
+        
         @include('cookieConsent::index')
         <div class="body-atlas">
             <div class="fixed-top">
-            {{-- <nav class="navbar navbar-expand-lg navbar-dark navbar-treno  fixed-top"> --}}
-                <nav class="navbar navbar-expand-lg navbar-dark back_uno_nabvar " id="menu">
+                <nav class="navbar navbar-expand-lg back_uno_nabvar " id="menu">
                     <!-- Actual search box -->
                     <div class="container-fluid">
                         <a class="size-one-img-atlas" id="logo-size"  href="{{ url('/') }}">
-                            <img id="nav-img" style="width: 100% !important;" src=" {{ asset('images/atlas_nav.png') }}" alt="Imagen">
+                            <img id="nav-img" style="width: 100% !important;" src=" {{ asset('images/rubber_nav.png') }}" alt="Imagen">
                         </a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                            <span class="navbar-toggler-icon"></span>
+                             <a style="color:#ffffff !important;">
+                                <i class="fa fa-list"> </i>
+                            </a>
                         </button>
 
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -485,38 +462,31 @@
                             </ul>
                             <!-- Right Side Of Navbar -->
                             <ul class="navbar-nav ml-auto">
-                                <li class="nav-item" id="home-div">
-                                    <a class="nav-link font-nav-atlas"  href="#initpage">Inicio</a>
-                                </li>
-                                <li class="nav-item" id="home-menu" style="display: none;">
+                                <li class="nav-item" >
                                     <a class="nav-link font-nav-atlas"  href="{{ url('/') }}">Inicio</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link font-nav-atlas" href="{{ url('/aboutus') }}">Nosotros</a>
                                 </li>
-                                <li class="nav-item" id="products-div">
+                                <li class="nav-item">
                                     <a class="nav-link font-nav-atlas" href="{{ url('/productslist') }}">Productos</a>
                                 </li>
-                                {{-- <li class="nav-item" id="producs-menu" style="display: none;">
-                                    <a class="nav-link font-nav-atlas" href="#products">Productoss</a>
-                                </li> --}}
-                                <li class="nav-item" id="services-menu">
-                                    <a class="nav-link font-nav-atlas" href="#services">Servicios</a>
-                                </li>
-                                {{-- @can('roles.index')
+
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('users.index') }}" >Usuarios</a>
+                                    <a class="nav-link font-nav-atlas" href="{{ url('/apps') }}">Aplicaciones</a>
                                 </li>
-                                @endcan --}}
                                 @can('roles.index')
                                 <li class="nav-item">
                                     <a class="nav-link font-nav-atlas" href="{{ route('customer_requests.index') }}">Solicitudes</a>
                                 </li>
                                 @endcan
                                 <li class="nav-item">
-                                    <a class="nav-link font-nav-atlas" href="#portfolio">Cotiza</a>
+                                    <a class="nav-link font-nav-atlas" href="{{ url('/obras') }}">Obras</a>
                                 </li>
-                                @guest
+                                <li class="nav-item">
+                                    <a class="nav-link font-nav-atlas" href="#portfolio">Contacto</a>
+                                </li>
+                                {{-- @guest
                                     <li class="nav-item">
                                         <a class="nav-link font-nav-atlas" href="{{ route('login') }}">{{ __('Login') }}</a>
                                     </li>
@@ -538,7 +508,7 @@
                                             </form>
                                         </div>
                                     </li>
-                                @endguest
+                                @endguest --}}
                             </ul>
                         </div>
                     </div>
@@ -628,15 +598,7 @@
                     </div>
                 </div>
             </div>
-            @endif
-
-            
-
-           
-
-             
-
-            
+            @endif            
 
             <main class="margin-content-atlas" id="initpage">
                 @yield('content')
@@ -654,29 +616,13 @@
         <!-- Grid row-->
         <div class="row py-3">
             <div class="col-md-4 offset-md-4 text-center">
-                <!-- Facebook -->
-                <a class="fb-ic color-text_atlas" target="_blank" href="https://www.facebook.com/ATLAS-Repuestos-y-Servicio-SAS-105574301251019">
-                    <i class="fa fa-facebook-f fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
-                </a>
-                <!-- Twitter -->
-                <a class="tw-ic color-text_atlas">
-                    <i class="fa fa-twitter fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
-                </a>
-                <!--Instagram-->
-                <a class="ins-ic color-text_atlas">
-                    <i class="fa fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
-                </a>
-                <!--Pinterest-->
-                <a class="pin-ic color-text_atlas">
-                    <i class="fa fa-pinterest fa-lg white-text fa-2x"> </i>
-                </a>
             </div>
         </div>
         <!-- Grid column --> 
         </div>
         <div>
             <div class="footer-copyright text-center text-white py-3">© 2020 Copyright:
-                <a href="https://mdbootstrap.com/"> atlas.com</a>
+                <a href="https://mdbootstrap.com/">rubbergranulate.com.co</a>
             </div>
         </div>
     </footer>

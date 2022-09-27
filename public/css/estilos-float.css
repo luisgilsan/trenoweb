@@ -16,8 +16,22 @@
 
 .container-whatsapp{
     position: fixed;
-    bottom: 80px;
-    right: 10px;
+    bottom: 40px;
+    right: 20px;
+    z-index:2;
+}
+
+.container-facebook{
+    position: fixed;
+    bottom: 420px;
+    right: 20px;
+    z-index:2;
+}
+
+.container-instagram{
+    position: fixed;
+    bottom: 370px;
+    right: 20px;
     z-index:2;
 }
 
@@ -28,14 +42,6 @@
     z-index:3;
 }
 
-.floating-div-atlas{
-    position: fixed;
-    background-color: rgba(0, 0, 0, 0.6);
-    width: 40%;
-    top: 15vh;
-    height: 85vh;
-    z-index:3;
-}
 
 .redes a, .icon-mas2{
     display: block;
@@ -54,15 +60,51 @@
 .icon-what{
     display: block;
     text-decoration: none;
-    background-color: rgba(0, 152, 168, 0.9);
+    background-color: rgba(0, 152, 168, 0.0);
     color: #fff;
-    width: 150px;
-    height: 150px;
+    width: 100px;
+    height: 100px;
     line-height: 150px;
     text-align: center;
-    border-radius: 50% 50% 10% 10%;
-    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.4);
+    border-radius: 30% 30% 30% 30%;
+    /* box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.4); */
     transition: all 500ms ease;
+}
+
+.icon-facebook{
+    display: block;
+    text-decoration: none;
+    background-color: rgba(0, 152, 168, 0.0);
+    color: #fff;
+    width: 50px;
+    height: 45px;
+    line-height: 150px;
+    text-align: center;
+    border-radius: 30% 30% 30% 30%;
+    /* box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.4); */
+    transition: all 500ms ease;
+    cursor: pointer;
+    font-size: 23px;
+}
+
+.icon-instagram{
+    display: block;
+    text-decoration: none;
+    background-color: rgba(0, 152, 168, 0.0);
+    color: #fff;
+    width: 50px;
+    height: 45px;
+    line-height: 150px;
+    text-align: center;
+    border-radius: 30% 30% 30% 30%;
+    /* box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.4); */
+    transition: all 500ms ease;
+    cursor: pointer;
+    font-size: 23px;
+}
+
+.icon-what:hover{
+    background-color: rgba(0, 0, 0, .1);
 }
 
 .icon-show-menu{
@@ -107,7 +149,7 @@
  }
 
 .icon-what:hover{
-    background-color: rgba(0, 152, 168, 1);
+    background-color: rgba(0, 0, 0, .1);
 }
 
 

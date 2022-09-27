@@ -2,12 +2,18 @@
 
 
 <style>
-
+    .caption-rubber{
+        background-color: rgba(0, 0, 0, 0.7) !important;  
+        bottom: 42% !important;
+        top: 50% !important;
+        right: 0% !important;
+        left: 65% !important;
+        border-radius: 30px 0px 0px 30px; 
+    }
 </style>
-
+    
 <script>
-    // $('.carousel').carousel({
-    //     interval: 300});
+    
 </script>
 
 @section('content')   
@@ -20,150 +26,60 @@
         </ol>
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src="{{ asset('images/slider_3-copia.jpg') }}" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-              <h3 class="subtitle-white-atlas">ATLAS</h3>
-              <p  class="paragraph-white-atlas">Todo en maquinaria pesada.</p>
+            <img src="{{ asset('images/slider_6.jpg') }}" class="d-block w-100" alt="...">
+            <img src="{{ asset('images/banner_uno.png') }}" class="d-block w-100"  alt="...">
+            <div class="carousel-caption d-none d-md-block caption-rubber">
+                <p class="paragraph-white-atlas">Nuestro caucho es un producto 100% reciclado.</p>
             </div>
           </div>
           <div class="carousel-item">
-            <img src="{{ asset('images/slider_4-copia.jpg') }}" class="d-block w-100"  alt="...">
-            <div class="carousel-caption d-none d-md-block">
-              <h3 class="subtitle-white-atlas">ATLAS</h3>
-              <p class="paragraph-white-atlas">Todo en maquinaria pesada.</p>
+            <img src="{{ asset('images/slider_4.jpg') }}" class="d-block w-100"  alt="...">
+            <img src="{{ asset('images/banner_uno.png') }}" class="d-block w-100"  alt="...">
+            <div class="carousel-caption d-none d-md-block caption-rubber" >
+              <p class="paragraph-white-atlas">Nuestro caucho es un producto 100% reciclado.</p>
             </div>
           </div>
           <div class="carousel-item">
-            <img src="{{ asset('images/slider_5-copia.jpg') }}" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-              <h3 class="subtitle-white-atlas">ATLAS</h3>
-              <p class="paragraph-white-atlas">Todo en maquinaria pesada.</p>
+            <img src="{{ asset('images/slider_5.jpg') }}" class="d-block w-100" alt="...">
+            <img src="{{ asset('images/banner_uno.png') }}" class="d-block w-100"  alt="...">
+            <div class="carousel-caption d-none d-md-block caption-rubber">
+              <p class="paragraph-white-atlas">Nuestro caucho es un producto 100% reciclado.</p>
             </div>
           </div>
         </div>
-        <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+        {{-- <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="sr-only">Previous</span>
         </a>
         <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="sr-only">Next</span>
-        </a>
+        </a> --}}
     </div>
     <div>
         <br/>
         <div class="container-fluid" id="products">
             <div class="row">
-                <div class="col-md-12 text-center">
-                    <div class="rounded-div" style="background-color: #05bbaf; border-radius: 0px 0px 12px 12px !important;">
-                       <p class="menu-white-atlas text-center py-3">NUESTRAS MARCAS</p>
-                    </div>
-                    <div class="tip-rounded-div" style="border-top: 40px solid #05bbaf;">
-                    </div>
+                <div class="col-md-1 text-center"></div>
+                <div class="col-md-10 text-center" style="font-family: Tahoma, sans-serif;font-size: 24px;">
+                    <p>Somos una empresa joven con personal altamente calificado y experimentado en la producción, distribuciones e instalaciones de juegos y areas deportivas, todos nuestros proyectos son enfocados en la utilización de SBR para ser cada día más amables con el medio ambiente, empresa 100% colombiana.</p>
                 </div>
+                <div class="col-md-1 text-center"></div>
             </div>
             <div class="row">
                 <div class="col-md-12 text-center"> 
                     <div class="py-2">
                     </div>          
-                    <img class="border-img" style="width: 140px;" src="{{ asset('images/logos/bobcat.svg')}}">
-                    <img class="border-img" style="width: 140px;" src="{{ asset('images/logos/case.png')}}">
-                    <img class="border-img" style="width: 140px;" src="{{ asset('images/logos/cat.png')}}">
-                    <img class="cborder-img" style="width: 140px;" src="{{ asset('images/logos/ford.png')}}">
-                    <img class="border-img" style="width: 140px;" src="{{ asset('images/logos/holland.png')}}">
-                    <img class="border-img" style="width: 140px;" src="{{ asset('images/logos/john.png')}}">
-                    <img class="border-img" style="width: 140px;" src="{{ asset('images/logos/komatsu.gif')}}">
-                    <img class="border-img" style="width: 140px;" src="{{ asset('images/logos/scania.png')}}">
+                    <img class="border-img" style="width: 300px;" src="{{ asset('images/01.jpg')}}">
+                    <img class="border-img" style="width: 300px;" src="{{ asset('images/02.jpg')}}">
+                    <img class="border-img" style="width: 300px;" src="{{ asset('images/03.jpg')}}">
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12 text-center py-2" > 
-                    <a href="{{ url('/productslist') }}">
-                        <button class="btn button-float-atlas menu-white-atlas"  style=" width: 300px !important;">VER PRODUCTOS</button>
-                    </a>
-                </div>
-            </div>
+            </div> 
         </div>    
         <div class="py-3"></div>   
     </div>
 
-    <div class="nav-backgroud-standard-black">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-12 text-center" id="services">
-                    <img src="{{ asset('images/services.png') }}" style="width: 360px;"/>
-                </div>
-            </div>
-        </div>
-        <div class="container-fluid py-3">
-            <div class="row">
-                <div class="col-md-6">
-                    <h5 class="subtitle-white-atlas text-left" style="margin-left:20px !important; margin-right:10px !important;">Servicio de reparación y mantenimiento</h5>
-                    <p class="paragraph-white-atlas text-justify py-2" style="margin-left:20px !important; margin-right:10px !important;">ATLAS cuenta con una amplia colaboración de talleres especializados, donde el conocimiento de manos expertas repararán los componentes que se necesiten con el fin de que sus máquinas se mantengan al 100% de rendimiento en el campo del trabajo. Nuestro grupo de labor ofrece el soporte necesario para su confiabilidad y le mantiene informado sobre el estado de reparación las 24 horas al día. ATLAS, con su modelo de trabajo, basado en altos estándares de calidad, le asegura a usted y a su máquina las perfectas condiciones de productividad y competitividad para su negocio.</p>
-                </div>
-                <div class="col-md-6 text-center">
-                    <h5 class="subtitle-white-atlas text-left" style="margin-left:20px !important; margin-right:10px !important;">Asesoramiento técnico</h5>
-                    <p class="paragraph-white-atlas text-justify py-2" style="margin-left:20px !important; margin-right:10px !important;">Nuestro servicio Técnico y Post-Venta permite crear una relación estrecha con nuestro cliente, para compartir toda la información y todo el asesoramiento necesario en partes de recambio y de mantenimiento, asegurando una solución pronta a cualquier imprevisto o consulta técnica que sea requerida por parte del mismo. El equipo de trabajo de ATLAS está cualificado y supervisa constantemente la calidad de los suministros, proporcionando el mejor y más adecuado asesoramiento técnico para su correcta utilización.</p>
-                    <a href="#portfolio">    
-                        <img src="{{ asset('images/request_service.png') }}" style="width: 220px;"/>
-                    </a>
-                </div>
-                <div class="container py-1"></div>
-            </div>
-        </div>
-    </div>
-    <div class="container-fluid">
-        <div class="row py-3">
-            <div class="col-md-6 text-center">
-                <div class="menu-div-atlas">
-                    <div class="rounded-div" style="background-color: #05bbaf;">
-                        <p class="menu-white-atlas text-center py-3">GARANTÍA</p>
-                    </div>
-                    <div class="tip-rounded-div" style="border-top: 40px solid #05bbaf;">
-                    </div>
-                    <p class="paragraph-black-atlas text-justify py-2" style="margin-left: 30px; margin-right: 30px;">ATLAS se distingue por ofrecer productos totalmente garantizados, los cuales son específicamente seleccionados por nuestros técnicos en conjunto con los más prestigiosos y reconocidos fabricantes de piezas a nivel mundial, creando así un lazo de confianza irrompible con nuestros clientes.</p>
-                    <div style="height: 40px;"></div>
-                </div>
-                <img class="img-menu-atlas" src="{{ asset('images/warranty_icon.png')}}">
-            </div>
-            <div class="col-md-6  text-center">
-                <div class="menu-div-atlas">
-                    
-                    <div class="rounded-div" style="background-color: #bf9721;">
-                        <p class="menu-white-atlas text-center py-3">LOGÍSTICA</p>
-                    </div>
-                    <div class="tip-rounded-div" style="border-top: 40px solid #bf9721;">
-                    </div>
-                    <p class="paragraph-black-atlas text-justify py-2" style="margin-left: 30px; margin-right: 30px;">Contamos con un grupo de equipo especializado de logística para reafirmar y asegurar la calidad y rapidez de nuestro servicio, trabajando conjuntamente con las principales empresas de transporte nacional e internacional para lograr eficacia en la operación y brindarle lo mejor.</p>
-                    <div style="height: 40px;"></div>
-                </div>
-                <img class="img-menu-atlas" src="{{ asset('images/logistics_icon.png')}}">
-            </div>
-        </div>                        
-        <div class="row py-3">
-            <div class="col-md-6 offset-md-3 text-center">
-                <div class="menu-div-atlas">
-                    <div class="rounded-div">
-                        <p class="menu-white-atlas text-center py-3">ATENCIÓN AL CLIENTE</p>
-                    </div>
-                    <div class="tip-rounded-div">
-                    </div>
-                    <p class="paragraph-black-atlas text-justify py-2" style="margin-left: 30px; margin-right: 30px;">ATLAS se encuentra a su disposición con un servicio de atención al cliente con profesionales del sector, buscando llegar a sus necesidades y que las mismas sean atendidas de inmediato, proporcionando asesoramiento e información eficaz para su empresa. Trabajamos de forma concreta, rápida y personalizada, ayudando a encontrar los repuestos requeridos. El departamento de ventas tiene disponibilidad directa a referencias con disponibilidad inmediata y le tendrán informado 24/7.</p>
-                    <div style="height: 40px;"></div>
-                </div>
-                <img class="img-menu-atlas" src="{{ asset('images/service_icon.png')}}">
-            </div>
-        </div>
-    </div> 
-    <br/>
-
-    {{-- @if(Session::has('jsAlert'))
-
-        <script type="text/javascript" >
-            alert({{ session()->get('jsAlert') }});
-        </script>
-
-    @endif --}}
+   
 
     <script>
         var msg = '{{Session::get('alert')}}';
@@ -177,17 +93,49 @@
     {{-- <script>
         alert({{ session()->get('jsAlert') }});
     </script> --}}
+    <div style="background-color: rgba(0, 77, 45, 0.99) !important;">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12 text-center font-tahoma" id="services">
+                    <p style="color: #ffffff; font-size:26px;">SERVICIOS</p>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid py-3 font-tahoma">
+            <div class="row">
+                <div class="col-md-6">
+                    <ul class="subtitle-white-atlas text-left font-tahoma" style="margin-left:20px !important; margin-right:10px !important;">
+                        <li>Instalaciones de césped sintético para canchas</li>
+                        <li>Instalaciones de césped paisajismo</li>
+                        <li>Instalación de pisó vaciado en Caucho SBR</li>
+                        <li>Instalación de pisó vaciado en mezcla de Caucho EPDM y SBR</li>
+                    </ul>
+                </div>
+                <div class="col-md-6 text-center">
+                    <ul class="subtitle-white-atlas text-left font-tahoma" style="margin-left:20px !important; margin-right:10px !important;">
+                        <li>Instalación de juegos para Parques infantiles</li>
+                        <li>Adecuación de canchas de voli-playa</li>
+                        <li>Adecuación de señalización vial</li>
+                        <li>Adecuación de campos deportivos bajó especificaciones</li>
+                    </ul>
+                </div>
+                <div class="container py-1"></div>
+            </div>
+        </div>
+    </div>
 
     <div>
         <div class="container" id="portfolio">
+            <div class="py-2">
+            </div>
             <div class="row">
                 <div class="col-md-12">
                     <div class="menu-div-atlas" style="border-radius: 12px 12px 0px 0px !important;">
-                        <div class="rounded-div" id="contact-us" style="background-color: #05bbaf;">
+                        <div class="rounded-div" id="contact-us" style="background-color: rgba(0, 77, 45, 0.99);">
                                 <p class="menu-white-atlas text-center py-3">Contactanos para recibir una asesoria personalizada</p>
                             </div>
-                        <div class="tip-rounded-div" style="border-top: 40px solid #05bbaf;">
-                        </div>
+                        {{-- <div class="tip-rounded-div" style="border-top: 40px solid rgba(0, 77, 45, 0.99);">
+                        </div> --}}
                     </div>
                 </div>
                 <div class="col-md-12">
@@ -224,7 +172,7 @@
                                 <label for="exampleFormControlTextarea">Mensaje</label>
                                 <textarea class="form-control" required id="exampleFormControlTextarea" name="message" rows="2"></textarea>
                             </div>
-                            <button type="submit" class="btn paragraph-black-atlas" style="background: #05bbaf">Enviar</button>
+                            <button type="submit" class="btn paragraph-black-atlas" style="background: rgba(0, 77, 45, 0.99); color: #ffffff;">Enviar</button>
                             <div class="py-1">
                             </div>
                         </form>

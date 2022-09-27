@@ -6,7 +6,7 @@
     <title>Solicitud de cliente</title>
 </head>
 <body>
-    <p>Saludos equipo <b>ATLAS</b>, un nuevo cliente a reportado una solicitud:</p>
+    <p>Saludos equipo <b>RUBBER GRANULATE</b>, un nuevo cliente a reportado una solicitud:</p>
     <ul>
         <li>Nombre: {{ $array["name"] }}</li>
         <li>E-MAIL: {{ $array["email"] }}</li>
@@ -18,8 +18,8 @@
 
     <p>Cordialmente,</p>
 
-    <img src=" {{asset('images/img_tractor_atlas.png') }}" style="width:80px !important;">
-    <p>ATLAS</p>
+    <img src=" {{asset('images/rubber_nav.png') }}" style="width:80px !important;">
+    <p>RUBBER GRANULATE </p>
     
 </body>
 </html>

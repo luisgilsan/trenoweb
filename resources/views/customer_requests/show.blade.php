@@ -53,6 +53,15 @@
                                 <p>{{ $customer_request->city }} </p>
                             </div>
                         </div>
+
+                        <div class="row">
+                            <div class="col-md-2"> 
+                                <p><b class="font-bold-treno">Fecha:</b></p>
+                            </div>
+                            <div class="col-md-10"> 
+                                <p>{{ $customer_request->created_at }} </p>
+                            </div>
+                        </div>
                         <div class="row">
                             <div class="col-md-2"> 
                                 <p><b class="font-bold-treno">Dirección:</b></p>
